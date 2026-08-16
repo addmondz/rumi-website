@@ -6,6 +6,7 @@ export type LandingPage = {
   description: string;
   colorScheme?: "accent" | "blue";
   category?: "property" | "software";
+  language?: "en" | "ms" | "zh";
   hero: {
     eyebrow: string;
     headline: string;
@@ -601,19 +602,19 @@ export const landingPages: LandingPage[] = [
   {
     slug: "web-development-malaysia",
     tone: "Professional",
-    keyword: "web development Malaysia",
+    keyword: "free web development Malaysia",
     colorScheme: "blue",
     category: "software",
-    title: "Web Development Malaysia | Rumi Solutions",
+    title: "Free Web Development Malaysia | Rumi Solutions — Only Pay for Hosting",
     description:
-      "Professional web development services in Malaysia. Rumi Solutions builds fast, responsive websites for businesses — from corporate sites and landing pages to complex web applications.",
+      "Get a professionally built website for free in Malaysia. Rumi Solutions develops your website at no cost — you only pay for hosting. T&C apply. Fast, responsive, SEO-ready sites for Malaysian businesses.",
     hero: {
-      eyebrow: "Web Development Malaysia",
-      headline: "Websites that work as hard as your business does.",
+      eyebrow: "Free Web Development Malaysia",
+      headline: "Get your website built for free. Only pay for hosting.",
       subheadline:
-        "Rumi Solutions designs and develops high-performance websites for Malaysian businesses — responsive, SEO-ready and built to convert visitors into customers.",
-      primaryCta: "Get a free consultation",
-      secondaryCta: "View our approach",
+        "Rumi Solutions develops professional, SEO-ready websites for Malaysian businesses at zero development cost. You only cover hosting fees — we handle design, development and launch. T&C apply.",
+      primaryCta: "Claim your free website",
+      secondaryCta: "See how it works",
       image: {
         src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
         alt: "Web developer working on responsive website design on multiple screens",
@@ -630,79 +631,84 @@ export const landingPages: LandingPage[] = [
         src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
         alt: "Clean modern website interface design with clear navigation",
         caption:
-          "Clean UI, fast load times and clear user journeys that keep visitors engaged and drive conversions.",
+          "Clean UI, fast load times and clear user journeys — all included in our free web development offer.",
       },
     },
     proofPoints: [
-      "Responsive across all devices",
-      "SEO-optimised from launch",
-      "Built with modern frameworks",
+      "Free website development — zero upfront cost",
+      "Only pay for hosting (T&C apply)",
+      "SEO-optimised and mobile-responsive",
     ],
     problem: {
-      title: "A slow or outdated website costs you customers every day.",
+      title: "Most Malaysian businesses cannot afford a professional website.",
       body:
-        "Malaysian businesses lose potential leads when their website loads slowly, looks outdated on mobile or ranks poorly on Google. Rumi Solutions builds modern websites that load fast, look professional and are structured for search engines from the start.",
+        "Web development costs thousands of ringgit upfront, which stops many small businesses from going online. Rumi Solutions removes that barrier — we build your website for free and you only pay a simple hosting fee to keep it live. T&C apply.",
     },
     benefits: {
-      title: "What you get with Rumi web development",
+      title: "What you get with our free web development",
       items: [
         {
-          title: "Performance-first builds",
+          title: "Zero development cost",
           body:
-            "We use Next.js, React and modern tooling to build websites that score high on Core Web Vitals — fast load times mean lower bounce rates and better Google rankings.",
+            "We design and build your website at no charge. No hidden fees for design, coding or launch — just a straightforward hosting fee to keep your site online. T&C apply.",
         },
         {
-          title: "Designed for conversions",
+          title: "Professional quality, not a template",
           body:
-            "Every page is structured with clear calls-to-action, intuitive navigation and persuasive layouts that guide visitors toward inquiries and sales.",
+            "We use Next.js, React and modern tooling to build fast, responsive websites — the same quality you would get from a paid project, not a generic drag-and-drop template.",
         },
         {
-          title: "Easy to manage",
+          title: "SEO-ready from launch",
           body:
-            "We build with content management in mind — update your own text, images and blog posts without needing a developer for every change.",
+            "Every free website comes with proper meta tags, structured data, fast load times and mobile optimisation so Google can find and rank your business.",
         },
       ],
     },
     useCases: {
-      title: "Websites we build for Malaysian businesses",
+      title: "Free websites for Malaysian businesses",
       items: [
-        "Corporate websites and company profiles",
-        "Landing pages and marketing microsites",
-        "SaaS dashboards and web applications",
-        "Portfolio and service showcase websites",
+        "Small businesses launching their first website",
+        "Startups that need an online presence fast",
+        "Service providers who want a professional landing page",
+        "Local businesses ready to attract customers from Google",
       ],
     },
     trust: {
-      title: "A development partner, not a template vendor.",
+      title: "A real website, not a catch.",
       body:
-        "Rumi Solutions writes custom code for every project. No drag-and-drop page builders, no bloated themes — just clean, maintainable code that performs well and scales with your business.",
+        "Rumi Solutions builds your site with the same code quality and design standards as our paid projects. The free development model works because we handle hosting — giving you a professional website without the upfront investment. T&C apply.",
       points: [
-        "Custom design and development for every project",
-        "Ongoing support and maintenance available",
-        "Transparent timeline and pricing from the start",
+        "Custom design and development at no cost",
+        "Simple, transparent hosting fee — no surprises",
+        "Ongoing support and content updates available",
       ],
     },
     faqs: [
       {
-        question: "What technologies do you use for web development?",
+        question: "Is the website really free?",
         answer:
-          "We primarily build with Next.js, React and TypeScript for modern, fast websites. For simpler projects, we also work with WordPress and other CMS platforms depending on your needs.",
+          "Yes. We build your website at no development cost. You only pay for hosting to keep the site live. Terms and conditions apply — WhatsApp us for full details.",
       },
       {
-        question: "How long does it take to build a website?",
+        question: "What is included in the free development?",
         answer:
-          "A standard business website typically takes 4 to 8 weeks from design to launch. More complex web applications with custom features may take longer depending on scope.",
+          "Design, development, mobile responsiveness, basic SEO setup and launch are all included. Additional features like e-commerce, custom integrations or advanced functionality may have separate pricing.",
       },
       {
-        question: "Do you provide hosting and maintenance after launch?",
+        question: "How much is the hosting fee?",
         answer:
-          "Yes. We can set up hosting on platforms like Vercel or AWS and offer ongoing maintenance packages for updates, security patches and content changes.",
+          "Hosting fees depend on the platform and traffic requirements. We will provide a clear, upfront quote before you commit. WhatsApp us for current hosting rates.",
+      },
+      {
+        question: "What are the terms and conditions?",
+        answer:
+          "T&C cover hosting commitment period, website scope, and usage terms. We are fully transparent — WhatsApp us and we will share the complete terms before starting.",
       },
     ],
     finalCta: {
-      title: "Ready to build a website that actually grows your business?",
+      title: "Ready to get your free website?",
       body:
-        "WhatsApp Rumi Solutions with your project idea and we will get back to you with a free consultation and timeline estimate.",
+        "WhatsApp Rumi Solutions now to claim your free website. We will discuss your business, design your site, and get you online — you only pay for hosting. T&C apply.",
     },
   },
   {
@@ -1133,19 +1139,726 @@ export const landingPages: LandingPage[] = [
         "WhatsApp Rumi Solutions with your product type and business goals — we will recommend the best e-commerce approach for your budget.",
     },
   },
+
+  // ── WhatsApp Chatbot Landing Page ──
+
+  {
+    slug: "whatsapp-chatbot-development-malaysia",
+    tone: "Solutions-driven",
+    keyword: "WhatsApp chatbot development Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "WhatsApp Chatbot Development Malaysia | Rumi Solutions",
+    description:
+      "WhatsApp chatbot development in Malaysia. Rumi Solutions builds smart WhatsApp chatbots for businesses — automate customer support, bookings, FAQs and lead capture on WhatsApp.",
+    hero: {
+      eyebrow: "WhatsApp Chatbot Development Malaysia",
+      headline: "Let a WhatsApp chatbot handle your customer inquiries 24/7.",
+      subheadline:
+        "Rumi Solutions builds custom WhatsApp chatbots for Malaysian businesses — automate replies, capture leads, answer FAQs and manage bookings without hiring extra staff.",
+      primaryCta: "Build my WhatsApp chatbot",
+      secondaryCta: "See chatbot features",
+      image: {
+        src: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=1200&q=80",
+        alt: "WhatsApp chatbot interface on smartphone for business automation",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
+        alt: "Business team planning chatbot conversation flows on whiteboard",
+        caption:
+          "We design conversation flows that match how your customers actually ask questions — natural, helpful and on-brand.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+        alt: "Customer using WhatsApp chatbot on mobile phone for instant support",
+        caption:
+          "Your customers get instant answers on WhatsApp — the app they already use every day.",
+      },
+    },
+    proofPoints: [
+      "24/7 automated customer replies",
+      "Lead capture and booking automation",
+      "Works on the WhatsApp your customers already use",
+    ],
+    problem: {
+      title: "Your team cannot reply to every WhatsApp message fast enough.",
+      body:
+        "Malaysian customers expect instant replies on WhatsApp. When your team is busy, messages pile up, leads go cold and customers move to competitors. A WhatsApp chatbot answers instantly — day or night — so you never miss an opportunity.",
+    },
+    benefits: {
+      title: "What a Rumi WhatsApp chatbot does for your business",
+      items: [
+        {
+          title: "Instant customer replies",
+          body:
+            "Automatically answer common questions about pricing, services, location and availability — customers get answers in seconds, not hours.",
+        },
+        {
+          title: "Lead capture on autopilot",
+          body:
+            "Collect customer names, phone numbers, requirements and preferences through guided chat flows — then notify your sales team with qualified leads.",
+        },
+        {
+          title: "Booking and appointment automation",
+          body:
+            "Let customers book appointments, schedule viewings or reserve services directly through WhatsApp without back-and-forth messaging.",
+        },
+      ],
+    },
+    useCases: {
+      title: "WhatsApp chatbots for Malaysian businesses",
+      items: [
+        "F&B businesses automating orders and reservations",
+        "Service providers handling appointment bookings",
+        "Property agents qualifying buyer inquiries",
+        "E-commerce stores answering product and delivery questions",
+      ],
+    },
+    trust: {
+      title: "Built for WhatsApp, not bolted on.",
+      body:
+        "Rumi Solutions builds chatbots specifically for the WhatsApp Business API — not generic chat widgets repurposed for WhatsApp. Every bot is designed around your actual customer conversations and business workflow.",
+      points: [
+        "Custom conversation flows for your business",
+        "WhatsApp Business API integration",
+        "Analytics dashboard to track conversations and leads",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do I need WhatsApp Business API?",
+        answer:
+          "Yes. We set up and integrate the WhatsApp Business API for your business as part of the chatbot development — you do not need to handle the technical setup yourself.",
+      },
+      {
+        question: "Can the chatbot hand off to a human agent?",
+        answer:
+          "Yes. The chatbot handles routine questions automatically and seamlessly transfers complex queries to your team with full conversation context.",
+      },
+      {
+        question: "How long does it take to build a WhatsApp chatbot?",
+        answer:
+          "A standard chatbot with FAQ, lead capture and booking flows typically takes 2 to 4 weeks. More complex integrations with CRM or payment systems may take longer.",
+      },
+    ],
+    finalCta: {
+      title: "Stop losing customers to slow replies.",
+      body:
+        "WhatsApp Rumi Solutions to discuss your chatbot — we will map your customer conversations and build a bot that works 24/7.",
+    },
+  },
+
+  // ── Multilingual SEO Pages ──
+
+  // Malay - Free Web Development
+  {
+    slug: "pembangunan-laman-web-percuma-malaysia",
+    tone: "Mesra",
+    keyword: "pembangunan laman web percuma Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    language: "ms",
+    title: "Pembangunan Laman Web Percuma Malaysia | Rumi Solutions",
+    description:
+      "Dapatkan laman web profesional secara percuma di Malaysia. Rumi Solutions membina laman web anda tanpa kos — anda hanya bayar untuk hosting. T&C terpakai.",
+    hero: {
+      eyebrow: "Pembangunan Laman Web Percuma",
+      headline: "Laman web percuma untuk perniagaan anda. Hanya bayar hosting.",
+      subheadline:
+        "Rumi Solutions membina laman web profesional untuk perniagaan di Malaysia tanpa sebarang kos pembangunan. Anda hanya perlu bayar yuran hosting sahaja. T&C terpakai.",
+      primaryCta: "Dapatkan laman web percuma",
+      secondaryCta: "Lihat cara ia berfungsi",
+      image: {
+        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+        alt: "Pembangun web sedang mereka bentuk laman web responsif",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80",
+        alt: "Laman web responsif dipaparkan pada komputer riba dan telefon bimbit",
+        caption:
+          "Setiap laman web yang kami bina sepenuhnya responsif — dioptimumkan untuk desktop, tablet dan telefon bimbit.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
+        alt: "Reka bentuk antara muka laman web moden yang bersih",
+        caption:
+          "UI yang bersih, masa muat yang pantas dan pengalaman pengguna yang jelas — semua termasuk dalam tawaran percuma kami.",
+      },
+    },
+    proofPoints: [
+      "Pembangunan laman web percuma — tiada kos pendahuluan",
+      "Hanya bayar hosting (T&C terpakai)",
+      "Dioptimumkan untuk SEO dan mesra telefon bimbit",
+    ],
+    problem: {
+      title: "Kebanyakan perniagaan Malaysia tidak mampu membina laman web profesional.",
+      body:
+        "Kos pembangunan web boleh mencecah ribuan ringgit, menghalang perniagaan kecil daripada hadir secara dalam talian. Rumi Solutions menghapuskan halangan ini — kami membina laman web anda secara percuma dan anda hanya bayar yuran hosting yang mudah. T&C terpakai.",
+    },
+    benefits: {
+      title: "Apa yang anda dapat dengan pembangunan web percuma kami",
+      items: [
+        {
+          title: "Tiada kos pembangunan",
+          body:
+            "Kami mereka bentuk dan membina laman web anda tanpa caj. Tiada bayaran tersembunyi untuk reka bentuk, pengkodan atau pelancaran — hanya yuran hosting yang jelas. T&C terpakai.",
+        },
+        {
+          title: "Kualiti profesional, bukan templat",
+          body:
+            "Kami menggunakan Next.js, React dan alatan moden untuk membina laman web yang pantas dan responsif — kualiti yang sama seperti projek berbayar.",
+        },
+        {
+          title: "Sedia SEO dari hari pertama",
+          body:
+            "Setiap laman web percuma dilengkapi dengan tag meta, data berstruktur, masa muat pantas dan pengoptimuman telefon bimbit supaya Google boleh menemui perniagaan anda.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Laman web percuma untuk perniagaan Malaysia",
+      items: [
+        "Perniagaan kecil yang melancarkan laman web pertama",
+        "Startup yang perlukan kehadiran dalam talian dengan segera",
+        "Pembekal perkhidmatan yang mahukan halaman pendaratan profesional",
+        "Perniagaan tempatan yang ingin menarik pelanggan dari Google",
+      ],
+    },
+    trust: {
+      title: "Laman web sebenar, bukan tipu helah.",
+      body:
+        "Rumi Solutions membina laman web anda dengan kualiti kod dan piawaian reka bentuk yang sama seperti projek berbayar kami. Model pembangunan percuma ini berfungsi kerana kami menguruskan hosting — memberikan anda laman web profesional tanpa pelaburan awal. T&C terpakai.",
+      points: [
+        "Reka bentuk dan pembangunan tersuai tanpa kos",
+        "Yuran hosting yang mudah dan telus — tiada kejutan",
+        "Sokongan berterusan dan kemaskini kandungan tersedia",
+      ],
+    },
+    faqs: [
+      {
+        question: "Adakah laman web ini benar-benar percuma?",
+        answer:
+          "Ya. Kami membina laman web anda tanpa kos pembangunan. Anda hanya bayar hosting untuk mengekalkan laman web secara langsung. Terma dan syarat terpakai — WhatsApp kami untuk butiran penuh.",
+      },
+      {
+        question: "Apa yang termasuk dalam pembangunan percuma?",
+        answer:
+          "Reka bentuk, pembangunan, responsif telefon bimbit, penyediaan SEO asas dan pelancaran — semuanya termasuk. Ciri tambahan seperti e-dagang atau integrasi tersuai mungkin mempunyai harga berasingan.",
+      },
+      {
+        question: "Berapakah yuran hosting?",
+        answer:
+          "Yuran hosting bergantung pada platform dan keperluan trafik. Kami akan berikan sebut harga yang jelas sebelum anda komited. WhatsApp kami untuk kadar hosting semasa.",
+      },
+    ],
+    finalCta: {
+      title: "Sedia untuk dapatkan laman web percuma anda?",
+      body:
+        "WhatsApp Rumi Solutions sekarang untuk menuntut laman web percuma anda. Kami akan bincangkan perniagaan anda, reka bentuk laman web anda dan bawa anda dalam talian — anda hanya bayar hosting. T&C terpakai.",
+    },
+  },
+
+  // Malay - Property Management
+  {
+    slug: "perisian-pengurusan-hartanah-malaysia",
+    tone: "Profesional",
+    keyword: "perisian pengurusan hartanah Malaysia",
+    colorScheme: "accent",
+    category: "property",
+    language: "ms",
+    title: "Perisian Pengurusan Hartanah Malaysia | Rumi Solutions",
+    description:
+      "Perisian pengurusan hartanah untuk JMB, MC dan pengurus hartanah di Malaysia. Sistem pelawat, bil, parkir dan portal penghuni dalam satu platform.",
+    hero: {
+      eyebrow: "Perisian Pengurusan Hartanah Malaysia",
+      headline: "Uruskan operasi bangunan anda dari satu platform digital.",
+      subheadline:
+        "Rumi Solutions membantu pasukan hartanah Malaysia menggantikan log manual, kumpulan WhatsApp bertaburan dan bil spreadsheet dengan sistem yang selamat dibina untuk operasi harian bangunan.",
+      primaryCta: "Hubungi kami di WhatsApp",
+      secondaryCta: "Lihat modul yang disertakan",
+      image: {
+        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80",
+        alt: "Pasukan pengurusan hartanah menyemak operasi bangunan pada komputer riba",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80",
+        alt: "Skrin bilik kawalan keselamatan untuk akses bangunan dan pemantauan pelawat",
+        caption:
+          "Digitalisasikan pondok pengawal, akses pelawat, parkir, bil dan rekod penghuni dalam satu sistem operasi.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        alt: "Bangunan kediaman moden sesuai untuk perisian pengurusan hartanah di Malaysia",
+        caption:
+          "Dibina untuk kondo, apartmen, bangunan pelbagai guna dan komuniti kediaman terurus di Malaysia.",
+      },
+    },
+    proofPoints: [
+      "Dibina untuk kondo, apartmen dan hartanah pelbagai guna",
+      "Aliran kerja pelawat, parkir, bil dan penghuni",
+      "Disesuaikan untuk operasi hartanah Malaysia",
+    ],
+    problem: {
+      title: "Aliran kerja hartanah manual melambatkan setiap pasukan.",
+      body:
+        "Apabila rekod pelawat, pembayaran, aduan dan tempahan kemudahan berada dalam alat yang berbeza, pengurus kehilangan keterlihatan dan penghuni menunggu lebih lama untuk jawapan. Rumi Solutions memusatkan aliran kerja harian yang mengekalkan hartanah berjalan lancar.",
+    },
+    benefits: {
+      title: "Apa yang pasukan pengurusan anda boleh tingkatkan",
+      items: [
+        {
+          title: "Koordinasi kaunter depan lebih pantas",
+          body:
+            "Digitalisasikan pra-pendaftaran pelawat, daftar masuk QR dan rekod pondok pengawal supaya pasukan keselamatan boleh mengesahkan kemasukan dengan cepat.",
+        },
+        {
+          title: "Komunikasi penghuni lebih jelas",
+          body:
+            "Berikan penghuni portal khusus untuk notis, permintaan sokongan, borang dan kemaskini dan bukannya bergantung hanya pada kumpulan sembang.",
+        },
+        {
+          title: "Pengebilan lebih teratur",
+          body:
+            "Jejak invois, status pembayaran dan susulan akaun dalam satu sistem yang direka untuk keperluan pengurusan hartanah.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Dibina untuk operasi hartanah Malaysia",
+      items: [
+        "Pasukan JMB dan MC yang menguruskan permintaan penghuni harian",
+        "Pengurus hartanah yang mengendalikan pelbagai tapak",
+        "Pasukan keselamatan yang menguruskan pelawat dan penghantaran",
+        "Pasukan pentadbiran yang menyelaraskan bil, notis dan rekod",
+      ],
+    },
+    trust: {
+      title: "Rakan perisian praktikal, bukan templat generik.",
+      body:
+        "Rumi Solutions mereka bentuk perisian pengurusan hartanah berdasarkan cara bangunan anda sudah beroperasi, kemudian memperbaiki proses tanpa memaksa penghuni dan kakitangan ke dalam kerumitan yang tidak perlu.",
+      points: [
+        "Aliran pertanyaan dan sokongan melalui WhatsApp",
+        "Modul boleh dikonfigurasi untuk setiap jenis hartanah",
+        "Pengalaman web responsif untuk pejabat dan telefon bimbit",
+      ],
+    },
+    faqs: [
+      {
+        question: "Apakah perisian pengurusan hartanah?",
+        answer:
+          "Perisian pengurusan hartanah membantu pasukan pengurusan mengendalikan komunikasi penghuni, akses pelawat, parkir, bil, permintaan sokongan dan rekod hartanah dari satu sistem digital.",
+      },
+      {
+        question: "Bolehkah Rumi Solutions menyesuaikan platform untuk bangunan kami?",
+        answer:
+          "Ya. Rumi Solutions boleh menyesuaikan modul, borang, aliran kerja dan ciri-ciri mengikut jenis hartanah dan proses pengurusan.",
+      },
+      {
+        question: "Adakah ini sesuai untuk hartanah di Malaysia?",
+        answer:
+          "Ya. Halaman pendaratan dan perkhidmatan ini tertumpu pada kondo, apartmen, bangunan komersial dan hartanah pelbagai guna di Malaysia.",
+      },
+    ],
+    finalCta: {
+      title: "Sedia untuk memodenkan operasi hartanah anda?",
+      body:
+        "Hantar mesej WhatsApp kepada Rumi Solutions dengan jenis hartanah anda dan aliran kerja yang anda ingin tingkatkan.",
+    },
+  },
+
+  // Chinese - Free Web Development
+  {
+    slug: "mianfei-wangzhan-kaifa-malaysia",
+    tone: "专业",
+    keyword: "免费网站开发马来西亚",
+    colorScheme: "blue",
+    category: "software",
+    language: "zh",
+    title: "免费网站开发马来西亚 | Rumi Solutions — 只需支付托管费",
+    description:
+      "在马来西亚免费获取专业网站。Rumi Solutions 免费为您开发网站 — 您只需支付托管费用。条款与条件适用。快速、响应式、SEO优化网站。",
+    hero: {
+      eyebrow: "免费网站开发马来西亚",
+      headline: "免费为您打造网站。只需支付托管费用。",
+      subheadline:
+        "Rumi Solutions 为马来西亚企业免费开发专业、SEO优化的网站。您只需承担托管费 — 我们负责设计、开发和上线。条款与条件适用。",
+      primaryCta: "获取免费网站",
+      secondaryCta: "了解运作方式",
+      image: {
+        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+        alt: "网站开发人员在多个屏幕上设计响应式网站",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80",
+        alt: "在笔记本电脑和移动设备上显示的响应式网站",
+        caption:
+          "我们构建的每个网站都完全响应式 — 从第一天起就针对桌面、平板和手机进行优化。",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
+        alt: "干净现代的网站界面设计",
+        caption:
+          "干净的界面、快速加载和清晰的用户体验 — 全部包含在我们的免费网站开发服务中。",
+      },
+    },
+    proofPoints: [
+      "免费网站开发 — 零前期费用",
+      "只需支付托管费（条款与条件适用）",
+      "SEO优化和移动端适配",
+    ],
+    problem: {
+      title: "大多数马来西亚企业无法负担专业网站开发费用。",
+      body:
+        "网站开发前期费用高达数千令吉，阻碍了许多中小企业上线。Rumi Solutions 消除了这一障碍 — 我们免费为您建站，您只需支付简单的托管费。条款与条件适用。",
+    },
+    benefits: {
+      title: "我们的免费网站开发包含什么",
+      items: [
+        {
+          title: "零开发费用",
+          body:
+            "我们免费为您设计和开发网站。没有设计、编码或上线的隐藏费用 — 只有一个简单明了的托管费。条款与条件适用。",
+        },
+        {
+          title: "专业品质，非模板",
+          body:
+            "我们使用 Next.js、React 和现代工具构建快速、响应式网站 — 与付费项目相同的品质，而非通用拖拽模板。",
+        },
+        {
+          title: "上线即支持SEO",
+          body:
+            "每个免费网站都配备适当的元标签、结构化数据、快速加载和移动优化，让 Google 能够找到并排名您的企业。",
+        },
+      ],
+    },
+    useCases: {
+      title: "适用于马来西亚企业的免费网站",
+      items: [
+        "首次建立网站的中小企业",
+        "需要快速上线的初创公司",
+        "需要专业着陆页的服务提供商",
+        "准备从 Google 吸引客户的本地企业",
+      ],
+    },
+    trust: {
+      title: "真正的网站，不是噱头。",
+      body:
+        "Rumi Solutions 以与付费项目相同的代码质量和设计标准来构建您的网站。免费开发模式之所以可行，是因为我们负责托管 — 让您在没有前期投资的情况下拥有专业网站。条款与条件适用。",
+      points: [
+        "免费定制设计和开发",
+        "简单透明的托管费 — 没有惊喜",
+        "持续支持和内容更新服务",
+      ],
+    },
+    faqs: [
+      {
+        question: "网站真的是免费的吗？",
+        answer:
+          "是的。我们免费为您开发网站。您只需支付托管费以保持网站上线。条款与条件适用 — 通过 WhatsApp 联系我们获取完整详情。",
+      },
+      {
+        question: "免费开发包括什么？",
+        answer:
+          "设计、开发、移动端适配、基础SEO设置和上线全部包含。电子商务、定制集成等高级功能可能需要额外收费。",
+      },
+      {
+        question: "托管费是多少？",
+        answer:
+          "托管费取决于平台和流量需求。我们会在您承诺之前提供清晰的报价。通过 WhatsApp 联系我们了解当前托管费率。",
+      },
+    ],
+    finalCta: {
+      title: "准备好获取您的免费网站了吗？",
+      body:
+        "立即通过 WhatsApp 联系 Rumi Solutions 获取您的免费网站。我们将讨论您的业务、设计您的网站并帮您上线 — 您只需支付托管费。条款与条件适用。",
+    },
+  },
+
+  // Chinese - Property Management
+  {
+    slug: "wuye-guanli-ruanjian-malaysia",
+    tone: "专业",
+    keyword: "物业管理软件马来西亚",
+    colorScheme: "accent",
+    category: "property",
+    language: "zh",
+    title: "物业管理软件马来西亚 | Rumi Solutions",
+    description:
+      "马来西亚物业管理软件，适用于JMB、MC和物业经理。访客管理、账单、停车和住户门户一站式平台。",
+    hero: {
+      eyebrow: "物业管理软件马来西亚",
+      headline: "一个平台管理您的整栋建筑运营。",
+      subheadline:
+        "Rumi Solutions 帮助马来西亚物业团队用安全的数字系统取代手工记录、分散的 WhatsApp 群聊和电子表格账单，专为日常建筑运营而设计。",
+      primaryCta: "通过 WhatsApp 咨询",
+      secondaryCta: "查看包含的模块",
+      image: {
+        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80",
+        alt: "物业管理团队在现代办公室中使用笔记本电脑审查建筑运营",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80",
+        alt: "用于建筑访客管理和监控的安保控制室屏幕",
+        caption:
+          "将门卫管理、访客通行、停车、账单和住户记录数字化整合到一个运营系统中。",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        alt: "适合马来西亚物业管理软件的现代住宅建筑",
+        caption:
+          "专为马来西亚公寓、住宅、综合用途建筑和管理式住宅社区而设计。",
+      },
+    },
+    proofPoints: [
+      "适用于公寓、住宅和综合用途物业",
+      "访客、停车、账单和住户工作流程",
+      "专为马来西亚物业运营定制",
+    ],
+    problem: {
+      title: "手工物业工作流程拖慢每个团队的效率。",
+      body:
+        "当访客记录、付款、投诉和设施预订分散在不同工具中时，经理失去可见性，住户等待回复的时间更长。Rumi Solutions 将维持物业运行的日常工作流程集中管理。",
+    },
+    benefits: {
+      title: "您的管理团队可以改进的方面",
+      items: [
+        {
+          title: "更快的前台协调",
+          body:
+            "将访客预登记、QR码签到和门卫记录数字化，让安保团队能够快速验证入场。",
+        },
+        {
+          title: "更清晰的住户沟通",
+          body:
+            "为住户提供专用门户，用于通知、支持请求、表格和更新，而不是仅依赖聊天群组。",
+        },
+        {
+          title: "更有序的账单管理",
+          body:
+            "在一个专为物业管理需求设计的系统中跟踪发票、付款状态和账户跟进。",
+        },
+      ],
+    },
+    useCases: {
+      title: "专为马来西亚物业运营而建",
+      items: [
+        "管理日常住户请求的JMB和MC团队",
+        "管理多个场地的物业经理",
+        "管理访客和快递的安保团队",
+        "协调账单、通知和记录的行政团队",
+      ],
+    },
+    trust: {
+      title: "实用的软件合作伙伴，而非通用模板。",
+      body:
+        "Rumi Solutions 根据您的建筑已有的运营方式设计物业管理软件，然后改进流程，而不强迫住户和员工面对不必要的复杂性。",
+      points: [
+        "通过 WhatsApp 进行咨询和支持",
+        "可配置的模块适用于各种物业类型",
+        "适用于办公室和移动端的响应式网页体验",
+      ],
+    },
+    faqs: [
+      {
+        question: "什么是物业管理软件？",
+        answer:
+          "物业管理软件帮助管理团队从一个数字系统处理住户沟通、访客通行、停车、账单、支持请求和物业记录。",
+      },
+      {
+        question: "Rumi Solutions 能为我们的建筑定制平台吗？",
+        answer:
+          "可以。Rumi Solutions 可以根据物业类型和管理流程定制模块、表格、工作流程和住户功能。",
+      },
+      {
+        question: "这适合马来西亚的物业吗？",
+        answer:
+          "是的。此服务专注于马来西亚的公寓、住宅、商业建筑和综合用途物业。",
+      },
+    ],
+    finalCta: {
+      title: "准备好让您的物业运营现代化了吗？",
+      body:
+        "通过 WhatsApp 向 Rumi Solutions 发送消息，告诉我们您的物业类型和您想改进的工作流程。",
+    },
+  },
+
+  // English - Software House Malaysia
+  {
+    slug: "software-house-malaysia",
+    tone: "Authoritative",
+    keyword: "software house Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "Software House Malaysia | Rumi Solutions",
+    description:
+      "Rumi Solutions is a Malaysian software house offering free web development, mobile apps, WhatsApp chatbots, SEO, custom software and property management systems.",
+    hero: {
+      eyebrow: "Software House Malaysia",
+      headline: "A Malaysian software house that builds what your business actually needs.",
+      subheadline:
+        "Rumi Solutions is a full-service software house in Malaysia — we build websites (free development, only pay hosting), mobile apps, WhatsApp chatbots, custom software and property management systems. T&C apply.",
+      primaryCta: "Talk to us on WhatsApp",
+      secondaryCta: "See our services",
+      image: {
+        src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+        alt: "Software development team collaborating in a modern Malaysian office",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+        alt: "Software team planning project requirements on shared screen",
+        caption:
+          "From free websites to complex custom systems — every project starts with understanding your business first.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
+        alt: "Custom software dashboard and application interface",
+        caption:
+          "We deliver clean, production-ready software — not half-finished prototypes.",
+      },
+    },
+    proofPoints: [
+      "Free web development — only pay hosting",
+      "Web, mobile, chatbot and custom software",
+      "Malaysian team, WhatsApp-first communication",
+    ],
+    problem: {
+      title: "Finding a reliable software partner in Malaysia is harder than it should be.",
+      body:
+        "Many businesses get burned by agencies that over-promise, under-deliver or disappear after launch. Rumi Solutions is a hands-on Malaysian software house — we scope honestly, build practically and stay available on WhatsApp for support after delivery.",
+    },
+    benefits: {
+      title: "What Rumi Solutions builds",
+      items: [
+        {
+          title: "Free websites (only pay hosting)",
+          body:
+            "We develop professional, SEO-ready websites at zero development cost. You only cover hosting fees — no hidden charges. T&C apply.",
+        },
+        {
+          title: "Mobile apps and WhatsApp chatbots",
+          body:
+            "Cross-platform iOS and Android apps with React Native, plus WhatsApp chatbots that automate customer replies, bookings and lead capture.",
+        },
+        {
+          title: "Custom software and property systems",
+          body:
+            "Bespoke business systems, SaaS platforms, internal tools and property management software tailored to Malaysian operations.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Businesses we work with",
+      items: [
+        "SMEs and startups needing a professional website fast",
+        "Property teams replacing manual workflows with software",
+        "Businesses automating customer service with WhatsApp chatbots",
+        "Companies building custom internal tools and platforms",
+      ],
+    },
+    trust: {
+      title: "We write code, not excuses.",
+      body:
+        "Rumi Solutions is a lean, technical software house. No account managers, no bloated teams — direct communication with the developers building your product, from first WhatsApp message to post-launch support.",
+      points: [
+        "Direct WhatsApp communication throughout every project",
+        "Clean, documented code you fully own",
+        "Post-launch support and maintenance available",
+      ],
+    },
+    faqs: [
+      {
+        question: "Is the website development really free?",
+        answer:
+          "Yes. We build your website at no development cost — you only pay for hosting. Terms and conditions apply. WhatsApp us for full details.",
+      },
+      {
+        question: "What services does Rumi Solutions offer?",
+        answer:
+          "We offer free web development (hosting only), mobile app development, WhatsApp chatbot development, SEO services, custom software development, e-commerce websites and property management software.",
+      },
+      {
+        question: "How do I start a project with Rumi Solutions?",
+        answer:
+          "WhatsApp us with a brief description of what you need. We will discuss your requirements, provide a timeline and scope the project — all through a quick WhatsApp conversation.",
+      },
+    ],
+    finalCta: {
+      title: "Need software built by a team that actually delivers?",
+      body:
+        "WhatsApp Rumi Solutions with your idea — whether it is a free website, a mobile app, a chatbot or a custom system. We will get back to you with a clear plan.",
+    },
+  },
+];
+
+const languageGroups: string[][] = [
+  [
+    "web-development-malaysia",
+    "pembangunan-laman-web-percuma-malaysia",
+    "mianfei-wangzhan-kaifa-malaysia",
+  ],
+  [
+    "property-management-software-malaysia",
+    "perisian-pengurusan-hartanah-malaysia",
+    "wuye-guanli-ruanjian-malaysia",
+  ],
 ];
 
 export function getLandingPage(slug: string) {
   return landingPages.find((page) => page.slug === slug);
 }
 
-export function getWhatsAppHref(page: LandingPage) {
-  const cleanKeyword = page.keyword.replace(/\s*Malaysia\s*/gi, " ").trim();
-  const msg =
-    page.category === "software"
-      ? `Hi Rumi Solutions, I am interested in your ${cleanKeyword} services. I would like to book a demo.`
-      : `Hi Rumi Solutions, I am interested in ${cleanKeyword}. I would like to book a demo.`;
-  const text = encodeURIComponent(msg);
+export function getLanguageAlternates(
+  slug: string,
+): Record<string, string> | undefined {
+  const group = languageGroups.find((g) => g.includes(slug));
+  if (!group) return undefined;
 
+  const langMap: Record<string, string> = {};
+  for (const s of group) {
+    const page = getLandingPage(s);
+    if (!page || page.slug === slug) continue;
+    const lang = page.language ?? "en";
+    langMap[lang] = `${siteUrl}/solutions/${s}`;
+  }
+  return Object.keys(langMap).length > 0 ? langMap : undefined;
+}
+
+export function getWhatsAppHref(page: LandingPage) {
+  const cleanKeyword = page.keyword
+    .replace(/\s*Malaysia\s*/gi, " ")
+    .replace(/\s*马来西亚\s*/g, "")
+    .trim();
+
+  let msg: string;
+  if (page.language === "ms") {
+    msg =
+      page.category === "software"
+        ? `Hi Rumi Solutions, saya berminat dengan perkhidmatan ${cleanKeyword} anda. Saya ingin membuat tempahan demo.`
+        : `Hi Rumi Solutions, saya berminat dengan ${cleanKeyword}. Saya ingin membuat tempahan demo.`;
+  } else if (page.language === "zh") {
+    msg =
+      page.category === "software"
+        ? `你好 Rumi Solutions，我对您的${cleanKeyword}服务感兴趣。我想预约演示。`
+        : `你好 Rumi Solutions，我对${cleanKeyword}感兴趣。我想预约演示。`;
+  } else {
+    msg =
+      page.category === "software"
+        ? `Hi Rumi Solutions, I am interested in your ${cleanKeyword} services. I would like to book a demo.`
+        : `Hi Rumi Solutions, I am interested in ${cleanKeyword}. I would like to book a demo.`;
+  }
+
+  const text = encodeURIComponent(msg);
   return `https://wa.me/${whatsAppNumber}?text=${text}`;
 }

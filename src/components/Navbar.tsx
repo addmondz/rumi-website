@@ -12,8 +12,9 @@ const solutionGroups = [
   {
     heading: "Services",
     items: [
-      { label: "Web Development", href: "/solutions/web-development-malaysia" },
+      { label: "Free Web Development", href: "/solutions/web-development-malaysia" },
       { label: "Mobile App Development", href: "/solutions/mobile-app-development-malaysia" },
+      { label: "WhatsApp Chatbot", href: "/solutions/whatsapp-chatbot-development-malaysia" },
       { label: "Custom Software", href: "/solutions/custom-software-development-malaysia" },
       { label: "E-Commerce Development", href: "/solutions/ecommerce-website-development-malaysia" },
       { label: "SEO Services", href: "/solutions/seo-services-malaysia" },

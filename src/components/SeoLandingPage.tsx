@@ -96,7 +96,7 @@ export default function SeoLandingPage({ page }: { page: LandingPage }) {
           contactType: "sales",
           telephone: "+60 14-206 8662",
           areaServed: "MY",
-          availableLanguage: ["English", "Malay"],
+          availableLanguage: ["English", "Malay", "Chinese"],
         },
       },
       {
@@ -128,7 +128,7 @@ export default function SeoLandingPage({ page }: { page: LandingPage }) {
   };
 
   return (
-    <main>
+    <main lang={page.language && page.language !== "en" ? page.language : undefined}>
       <Navbar />
       <script
         type="application/ld+json"
@@ -218,7 +218,7 @@ export default function SeoLandingPage({ page }: { page: LandingPage }) {
               </p>
               <h2 className="mt-3 text-2xl font-bold">{page.keyword}</h2>
               <p className="mt-2 text-sm text-gray-300">
-                Tone: {page.tone}. Built to attract Malaysian {page.category === "software" ? "businesses" : "property teams"}{" "}
+                Built to attract Malaysian {page.category === "software" ? "businesses" : "property teams"}{" "}
                 ready to ask questions through WhatsApp.
               </p>
               <ul className="mt-6 space-y-4">
@@ -512,7 +512,7 @@ export default function SeoLandingPage({ page }: { page: LandingPage }) {
                   className={`rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 ${rc.relatedHover} hover:shadow-md hover:-translate-y-0.5`}
                 >
                   <p className={`text-sm font-semibold ${rc.relatedLabel}`}>
-                    {related.tone}
+                    {related.category === "software" ? "Software" : "Property"}
                   </p>
                   <h3 className="mt-2 font-semibold text-navy-900">
                     {related.keyword}

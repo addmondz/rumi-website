@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const products = [
@@ -53,6 +54,17 @@ const products = [
     tagline: "Track maintenance requests, assign tasks, and monitor resolution in real time.",
     color: "bg-rose-50 text-rose-600",
   },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+      </svg>
+    ),
+    name: "WhatsApp Chatbot",
+    tagline: "Automate customer replies, lead capture, bookings, and FAQs on WhatsApp 24/7.",
+    color: "bg-green-50 text-green-600",
+    href: "/solutions/whatsapp-chatbot-development-malaysia",
+  },
 ];
 
 export default function ProductsSection() {
@@ -81,46 +93,10 @@ export default function ProductsSection() {
           </div>
         </AnimateOnScroll>
 
-        {/* Bento grid: 2 columns top row, 3 columns bottom row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {products.slice(0, 2).map((product, i) => (
-            <AnimateOnScroll key={product.name} delay={i * 0.1}>
-              <div className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.08] hover:bg-white/[0.08] hover:border-accent-500/30 hover:-translate-y-1 transition-all duration-300 group">
-                <div
-                  className={`w-14 h-14 rounded-xl ${product.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {product.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {product.name}
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-5">
-                  {product.tagline}
-                </p>
-                <span className="inline-flex items-center gap-1 text-accent-400 text-sm font-medium group-hover:gap-2 transition-all">
-                  Learn more
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </AnimateOnScroll>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
-          {products.slice(2).map((product, i) => (
-            <AnimateOnScroll key={product.name} delay={(i + 2) * 0.1}>
-              <div className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-white/[0.08] hover:bg-white/[0.08] hover:border-accent-500/30 hover:-translate-y-1 transition-all duration-300 group">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {products.map((product, i) => {
+            const card = (
+              <div className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-white/[0.08] hover:bg-white/[0.08] hover:border-accent-500/30 hover:-translate-y-1 transition-all duration-300 group h-full">
                 <div
                   className={`w-14 h-14 rounded-xl ${product.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
                 >
@@ -149,8 +125,20 @@ export default function ProductsSection() {
                   </svg>
                 </span>
               </div>
-            </AnimateOnScroll>
-          ))}
+            );
+
+            return (
+              <AnimateOnScroll key={product.name} delay={i * 0.1}>
+                {"href" in product && product.href ? (
+                  <Link href={product.href} className="block h-full">
+                    {card}
+                  </Link>
+                ) : (
+                  card
+                )}
+              </AnimateOnScroll>
+            );
+          })}
         </div>
       </div>
 

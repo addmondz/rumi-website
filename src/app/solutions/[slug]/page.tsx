@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SeoLandingPage from "@/components/SeoLandingPage";
-import { getLandingPage, landingPages, siteUrl } from "@/lib/landing-pages";
+import {
+  getLandingPage,
+  getLanguageAlternates,
+  landingPages,
+  siteUrl,
+} from "@/lib/landing-pages";
 
 type PageProps = {
   params: {
@@ -42,11 +47,15 @@ export function generateMetadata({ params }: PageProps): Metadata {
           "resident portal Malaysia",
         ];
 
+  const localeMap = { en: "en_MY", ms: "ms_MY", zh: "zh_MY" } as const;
+  const locale = localeMap[page.language ?? "en"];
+
   return {
     title: page.title,
     description: page.description,
     alternates: {
       canonical: url,
+      languages: getLanguageAlternates(page.slug),
     },
     keywords,
     openGraph: {
@@ -55,7 +64,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       url,
       siteName: "Rumi Solutions",
       type: "website",
-      locale: "en_MY",
+      locale,
     },
     twitter: {
       card: "summary_large_image",
