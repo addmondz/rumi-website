@@ -2,20 +2,18 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-// TODO: replace with your actual brand details
 export const metadata: Metadata = {
-  title: "Rumi Solution | Property Management Websites & Apps",
+  title: "Rumi Solutions | Software House Malaysia — Web, App, SEO & Custom Software",
   description:
-    "We build tailored property management websites and apps — QR code visitor access, parking management, resident portals, and billing at affordable prices.",
+    "Rumi Solutions is a Malaysian software house building websites, mobile apps, custom software, e-commerce platforms and SEO solutions for businesses that want to grow.",
   openGraph: {
-    title: "Rumi Solution | Property Management Websites & Apps",
+    title: "Rumi Solutions | Software House Malaysia",
     description:
-      "Tailored property management websites and apps for residential communities and commercial properties at affordable prices.",
+      "Malaysian software house — web development, mobile apps, custom software, e-commerce and SEO services for businesses.",
     type: "website",
     locale: "en_MY",
-    // TODO: replace with actual URL
     url: "https://rumisolution.com",
-    siteName: "Rumi Solution",
+    siteName: "Rumi Solutions",
   },
 };
 

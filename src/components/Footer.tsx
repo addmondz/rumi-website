@@ -4,11 +4,12 @@ import { useState } from "react";
 import { trackEvent } from "@/lib/gtag";
 
 const solutionLinks = [
-  { label: "Property Management Software", href: "/solutions/property-management-software-malaysia" },
-  { label: "Condo Management Software", href: "/solutions/condo-management-software" },
-  { label: "Custom Property Management Software", href: "/solutions/custom-property-management-software" },
-  { label: "Strata Management Software", href: "/solutions/strata-management-software-malaysia" },
-  { label: "Premium Property Management App", href: "/solutions/premium-property-management-app" },
+  { label: "Web Development", href: "/solutions/web-development-malaysia" },
+  { label: "Mobile App Development", href: "/solutions/mobile-app-development-malaysia" },
+  { label: "Custom Software", href: "/solutions/custom-software-development-malaysia" },
+  { label: "E-Commerce Development", href: "/solutions/ecommerce-website-development-malaysia" },
+  { label: "SEO Services", href: "/solutions/seo-services-malaysia" },
+  { label: "Property Management App", href: "/solutions/property-management-software-malaysia" },
 ];
 
 const companyLinks = [
@@ -44,8 +45,8 @@ export default function Footer() {
             {/* TODO: replace with real logo */}
             <div className="text-2xl font-bold mb-4">Rumi Solution</div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-              We build tailored property management websites and apps —
-              customised for your property at affordable prices.
+              A Malaysian software house building websites, mobile apps,
+              custom software and SEO solutions for businesses that want to grow.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3">

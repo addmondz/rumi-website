@@ -24,19 +24,31 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const url = `${siteUrl}/solutions/${page.slug}`;
 
+  const keywords =
+    page.category === "software"
+      ? [
+          page.keyword,
+          "Rumi Solutions",
+          "software house Malaysia",
+          "web development Malaysia",
+          "app development Malaysia",
+          "SEO Malaysia",
+        ]
+      : [
+          page.keyword,
+          "Rumi Solutions",
+          "property management software Malaysia",
+          "condo management software Malaysia",
+          "resident portal Malaysia",
+        ];
+
   return {
     title: page.title,
     description: page.description,
     alternates: {
       canonical: url,
     },
-    keywords: [
-      page.keyword,
-      "Rumi Solutions",
-      "property management software Malaysia",
-      "condo management software Malaysia",
-      "resident portal Malaysia",
-    ],
+    keywords,
     openGraph: {
       title: page.title,
       description: page.description,

@@ -4,6 +4,8 @@ export type LandingPage = {
   keyword: string;
   title: string;
   description: string;
+  colorScheme?: "accent" | "blue";
+  category?: "property" | "software";
   hero: {
     eyebrow: string;
     headline: string;
@@ -60,6 +62,8 @@ export const landingPages: LandingPage[] = [
     slug: "property-management-software-malaysia",
     tone: "Professional",
     keyword: "property management software Malaysia",
+    colorScheme: "accent",
+    category: "property",
     title: "Property Management Software Malaysia | Rumi Solutions",
     description:
       "Rumi Solutions builds property management software for Malaysian JMBs, MCs and property managers, with visitor access, billing, parking and resident portals.",
@@ -166,6 +170,8 @@ export const landingPages: LandingPage[] = [
     slug: "condo-management-software",
     tone: "Friendly",
     keyword: "condo management software",
+    colorScheme: "accent",
+    category: "property",
     title: "Condo Management Software for Residents & JMBs | Rumi Solutions",
     description:
       "Friendly condo management software for Malaysian condos, with visitor QR access, resident requests, notices, facilities, parking and billing support.",
@@ -271,6 +277,8 @@ export const landingPages: LandingPage[] = [
     slug: "custom-property-management-software",
     tone: "Technical",
     keyword: "custom property management software",
+    colorScheme: "accent",
+    category: "property",
     title: "Custom Property Management Software | Rumi Solutions Malaysia",
     description:
       "Custom property management software for Malaysian properties that need tailored workflows, integrations, resident portals and operational modules.",
@@ -377,6 +385,8 @@ export const landingPages: LandingPage[] = [
     slug: "strata-management-software-malaysia",
     tone: "Local",
     keyword: "strata management software Malaysia",
+    colorScheme: "accent",
+    category: "property",
     title: "Strata Management Software Malaysia | Rumi Solutions",
     description:
       "Local strata management software for Malaysian JMBs, MCs and building managers handling residents, access, parking, billing and community operations.",
@@ -482,6 +492,8 @@ export const landingPages: LandingPage[] = [
     slug: "premium-property-management-app",
     tone: "Premium",
     keyword: "property management app Malaysia",
+    colorScheme: "accent",
+    category: "property",
     title: "Premium Property Management App Malaysia | Rumi Solutions",
     description:
       "Premium property management app experiences for Malaysian residences that want polished resident portals, digital access, requests, notices and billing workflows.",
@@ -583,6 +595,544 @@ export const landingPages: LandingPage[] = [
         "Message Rumi Solutions on WhatsApp to discuss a premium property management app for your residence.",
     },
   },
+
+  // ── Software House Landing Pages ──
+
+  {
+    slug: "web-development-malaysia",
+    tone: "Professional",
+    keyword: "web development Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "Web Development Malaysia | Rumi Solutions",
+    description:
+      "Professional web development services in Malaysia. Rumi Solutions builds fast, responsive websites for businesses — from corporate sites and landing pages to complex web applications.",
+    hero: {
+      eyebrow: "Web Development Malaysia",
+      headline: "Websites that work as hard as your business does.",
+      subheadline:
+        "Rumi Solutions designs and develops high-performance websites for Malaysian businesses — responsive, SEO-ready and built to convert visitors into customers.",
+      primaryCta: "Get a free consultation",
+      secondaryCta: "View our approach",
+      image: {
+        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+        alt: "Web developer working on responsive website design on multiple screens",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80",
+        alt: "Responsive website displayed across laptop and mobile devices",
+        caption:
+          "Every website we build is fully responsive — optimised for desktop, tablet and mobile from day one.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
+        alt: "Clean modern website interface design with clear navigation",
+        caption:
+          "Clean UI, fast load times and clear user journeys that keep visitors engaged and drive conversions.",
+      },
+    },
+    proofPoints: [
+      "Responsive across all devices",
+      "SEO-optimised from launch",
+      "Built with modern frameworks",
+    ],
+    problem: {
+      title: "A slow or outdated website costs you customers every day.",
+      body:
+        "Malaysian businesses lose potential leads when their website loads slowly, looks outdated on mobile or ranks poorly on Google. Rumi Solutions builds modern websites that load fast, look professional and are structured for search engines from the start.",
+    },
+    benefits: {
+      title: "What you get with Rumi web development",
+      items: [
+        {
+          title: "Performance-first builds",
+          body:
+            "We use Next.js, React and modern tooling to build websites that score high on Core Web Vitals — fast load times mean lower bounce rates and better Google rankings.",
+        },
+        {
+          title: "Designed for conversions",
+          body:
+            "Every page is structured with clear calls-to-action, intuitive navigation and persuasive layouts that guide visitors toward inquiries and sales.",
+        },
+        {
+          title: "Easy to manage",
+          body:
+            "We build with content management in mind — update your own text, images and blog posts without needing a developer for every change.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Websites we build for Malaysian businesses",
+      items: [
+        "Corporate websites and company profiles",
+        "Landing pages and marketing microsites",
+        "SaaS dashboards and web applications",
+        "Portfolio and service showcase websites",
+      ],
+    },
+    trust: {
+      title: "A development partner, not a template vendor.",
+      body:
+        "Rumi Solutions writes custom code for every project. No drag-and-drop page builders, no bloated themes — just clean, maintainable code that performs well and scales with your business.",
+      points: [
+        "Custom design and development for every project",
+        "Ongoing support and maintenance available",
+        "Transparent timeline and pricing from the start",
+      ],
+    },
+    faqs: [
+      {
+        question: "What technologies do you use for web development?",
+        answer:
+          "We primarily build with Next.js, React and TypeScript for modern, fast websites. For simpler projects, we also work with WordPress and other CMS platforms depending on your needs.",
+      },
+      {
+        question: "How long does it take to build a website?",
+        answer:
+          "A standard business website typically takes 4 to 8 weeks from design to launch. More complex web applications with custom features may take longer depending on scope.",
+      },
+      {
+        question: "Do you provide hosting and maintenance after launch?",
+        answer:
+          "Yes. We can set up hosting on platforms like Vercel or AWS and offer ongoing maintenance packages for updates, security patches and content changes.",
+      },
+    ],
+    finalCta: {
+      title: "Ready to build a website that actually grows your business?",
+      body:
+        "WhatsApp Rumi Solutions with your project idea and we will get back to you with a free consultation and timeline estimate.",
+    },
+  },
+  {
+    slug: "mobile-app-development-malaysia",
+    tone: "Technical",
+    keyword: "mobile app development Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "Mobile App Development Malaysia | Rumi Solutions",
+    description:
+      "Expert mobile app development in Malaysia. Rumi Solutions builds native and cross-platform iOS and Android apps for startups, SMEs and enterprise clients.",
+    hero: {
+      eyebrow: "Mobile App Development Malaysia",
+      headline: "Turn your idea into an app people actually use.",
+      subheadline:
+        "Rumi Solutions builds polished iOS and Android apps for Malaysian businesses — from MVP prototypes to full-featured mobile platforms with backend APIs and admin dashboards.",
+      primaryCta: "Discuss your app idea",
+      secondaryCta: "See our process",
+      image: {
+        src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80",
+        alt: "Mobile app interface displayed on smartphone for app development in Malaysia",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=80",
+        alt: "Mobile app development team reviewing UI designs on tablet and phone",
+        caption:
+          "From wireframes to polished app — we handle UI/UX design, development, testing and App Store submission.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=1200&q=80",
+        alt: "Multiple mobile app screens showing clean interface design",
+        caption:
+          "Cross-platform development with React Native means one codebase for both iOS and Android — faster launch, lower cost.",
+      },
+    },
+    proofPoints: [
+      "iOS and Android from one codebase",
+      "Backend API and admin panel included",
+      "App Store and Play Store submission support",
+    ],
+    problem: {
+      title: "Building a mobile app without the right partner is expensive and slow.",
+      body:
+        "Many Malaysian businesses spend months and significant budget on apps that launch late, feel clunky or need constant fixes. Rumi Solutions follows a structured build process — scope, design, develop, test, launch — so your app ships on time and works from day one.",
+    },
+    benefits: {
+      title: "What Rumi delivers for your mobile app",
+      items: [
+        {
+          title: "Cross-platform development",
+          body:
+            "We build with React Native to deliver native-quality apps for both iOS and Android from a single codebase — saving time and development cost.",
+        },
+        {
+          title: "End-to-end delivery",
+          body:
+            "From product discovery and UI/UX design to backend development, testing and app store submission — we handle the full lifecycle.",
+        },
+        {
+          title: "Scalable architecture",
+          body:
+            "Apps are built with clean APIs, secure authentication and cloud infrastructure that handles growth without expensive rebuilds.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Apps we build for Malaysian businesses",
+      items: [
+        "Startup MVP apps to validate ideas quickly",
+        "Customer-facing service and booking apps",
+        "Internal tools and workforce management apps",
+        "E-commerce and marketplace mobile apps",
+      ],
+    },
+    trust: {
+      title: "We build apps that survive real users.",
+      body:
+        "Rumi Solutions stress-tests every app before launch. We write clean, documented code, set up proper CI/CD pipelines and design for the edge cases that break most v1 products.",
+      points: [
+        "Structured sprint-based development process",
+        "Post-launch support and iteration packages",
+        "Direct communication via WhatsApp throughout the project",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you build native or cross-platform apps?",
+        answer:
+          "We primarily build cross-platform apps using React Native, which gives native performance on both iOS and Android. For projects that require purely native development, we can accommodate that as well.",
+      },
+      {
+        question: "How much does it cost to develop a mobile app in Malaysia?",
+        answer:
+          "Cost depends on complexity, features and timeline. A simple MVP typically starts from RM 15,000 to RM 40,000, while full-featured apps with backend systems range higher. We provide a detailed quote after scoping your project.",
+      },
+      {
+        question: "Can you build the backend and admin panel too?",
+        answer:
+          "Yes. We build complete solutions including REST or GraphQL APIs, databases, admin dashboards and cloud deployment — not just the mobile front end.",
+      },
+    ],
+    finalCta: {
+      title: "Have an app idea? Let us turn it into a product.",
+      body:
+        "WhatsApp Rumi Solutions with your concept and we will walk you through our process, timeline and pricing.",
+    },
+  },
+  {
+    slug: "seo-services-malaysia",
+    tone: "Results-driven",
+    keyword: "SEO services Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "SEO Services Malaysia | Rumi Solutions",
+    description:
+      "Results-driven SEO services in Malaysia. Rumi Solutions helps businesses rank higher on Google with technical SEO, content strategy, keyword research and link building.",
+    hero: {
+      eyebrow: "SEO Services Malaysia",
+      headline: "Get found by customers who are already searching for you.",
+      subheadline:
+        "Rumi Solutions helps Malaysian businesses climb Google rankings with technical SEO, strategic content and data-driven keyword targeting that brings in qualified leads, not just traffic.",
+      primaryCta: "Get a free SEO audit",
+      secondaryCta: "See what we optimise",
+      image: {
+        src: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&q=80",
+        alt: "SEO analytics dashboard showing keyword rankings and traffic growth",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&q=80",
+        alt: "Marketing team analysing SEO performance data on screen",
+        caption:
+          "We track rankings, organic traffic and conversions — and report clearly so you know exactly what is working.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
+        alt: "Google search results page showing top ranking positions",
+        caption:
+          "Targeted keyword strategy that puts your business in front of customers at the moment they are ready to buy.",
+      },
+    },
+    proofPoints: [
+      "Technical SEO and site audits",
+      "Content strategy and keyword research",
+      "Monthly reporting with clear ROI metrics",
+    ],
+    problem: {
+      title: "If your business is not on page one, your competitors are taking your customers.",
+      body:
+        "Most Malaysian businesses have websites that are invisible to Google. Poor site structure, missing meta tags, slow load times and thin content mean search engines cannot rank you — even when your services are exactly what people are searching for.",
+    },
+    benefits: {
+      title: "How Rumi SEO services grow your traffic",
+      items: [
+        {
+          title: "Technical SEO foundation",
+          body:
+            "We fix crawl errors, improve site speed, set up proper schema markup and ensure your site architecture makes it easy for Google to index every important page.",
+        },
+        {
+          title: "Keyword-driven content strategy",
+          body:
+            "We research what your customers are actually searching for, then create and optimise content that targets those terms with clear intent matching.",
+        },
+        {
+          title: "Transparent monthly reporting",
+          body:
+            "Every month you get a clear report showing keyword rankings, organic traffic, conversions and the specific actions we took — no vague metrics or vanity numbers.",
+        },
+      ],
+    },
+    useCases: {
+      title: "SEO that works for Malaysian businesses",
+      items: [
+        "Local businesses targeting city and state-level keywords",
+        "E-commerce stores competing for product search terms",
+        "Service businesses generating leads through Google",
+        "Companies launching new websites that need organic visibility fast",
+      ],
+    },
+    trust: {
+      title: "SEO built on technical skill, not guesswork.",
+      body:
+        "Rumi Solutions takes a developer-first approach to SEO. We understand site architecture, Core Web Vitals, crawl budgets and structured data because we build the websites too — not just optimise them after the fact.",
+      points: [
+        "Developer-level technical SEO expertise",
+        "No lock-in contracts — results keep you, not paperwork",
+        "Combined SEO and web development for faster improvements",
+      ],
+    },
+    faqs: [
+      {
+        question: "How long does SEO take to show results?",
+        answer:
+          "SEO is a long-term strategy. Most businesses start seeing measurable improvements in 3 to 6 months, with significant ranking gains in 6 to 12 months. We focus on quick technical wins early while building long-term content authority.",
+      },
+      {
+        question: "Do you guarantee first page rankings?",
+        answer:
+          "No legitimate SEO provider can guarantee specific rankings because Google's algorithm is not controlled by anyone. What we guarantee is a structured, transparent process with clear reporting — and our track record shows consistent ranking improvements.",
+      },
+      {
+        question: "Can you do SEO for an existing website or do we need a new one?",
+        answer:
+          "We can optimise existing websites. We start with a full technical audit, fix foundational issues first, then layer on content and keyword strategy. If the site needs a rebuild for performance reasons, we can handle that too.",
+      },
+    ],
+    finalCta: {
+      title: "Stop losing customers to competitors who rank higher.",
+      body:
+        "WhatsApp Rumi Solutions for a free SEO audit of your website — we will show you exactly where the opportunities are.",
+    },
+  },
+  {
+    slug: "custom-software-development-malaysia",
+    tone: "Enterprise",
+    keyword: "custom software development Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "Custom Software Development Malaysia | Rumi Solutions",
+    description:
+      "Custom software development in Malaysia. Rumi Solutions builds bespoke business systems, SaaS platforms, internal tools and automation solutions for Malaysian companies.",
+    hero: {
+      eyebrow: "Custom Software Development Malaysia",
+      headline: "Software built around how your business actually works.",
+      subheadline:
+        "Rumi Solutions develops custom software for Malaysian businesses that need more than off-the-shelf tools — bespoke systems, internal platforms and automation that fit your exact workflow.",
+      primaryCta: "Discuss your project",
+      secondaryCta: "See what we build",
+      image: {
+        src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+        alt: "Software development team collaborating on custom application architecture",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+        alt: "Team workshop planning custom software requirements and architecture",
+        caption:
+          "We start with your business process, not a template — every system is designed around how your team actually operates.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80",
+        alt: "Custom software dashboard with analytics and management interface",
+        caption:
+          "From admin dashboards to customer portals — custom software that replaces spreadsheets and manual processes with reliable automation.",
+      },
+    },
+    proofPoints: [
+      "Tailored to your business workflow",
+      "Scalable cloud-native architecture",
+      "Full ownership of your codebase",
+    ],
+    problem: {
+      title: "Generic software forces your team into workarounds.",
+      body:
+        "When off-the-shelf tools do not match your workflow, your team ends up with spreadsheets, manual steps and fragile integrations that break. Custom software eliminates those gaps by building exactly what your operation needs — nothing more, nothing less.",
+    },
+    benefits: {
+      title: "Why Malaysian businesses choose custom software",
+      items: [
+        {
+          title: "Exact workflow fit",
+          body:
+            "We map your business process first, then build software that matches every step — approvals, notifications, roles and data flow designed around your team.",
+        },
+        {
+          title: "Integration with existing tools",
+          body:
+            "Custom software connects with your current systems — payment gateways, accounting software, CRMs, messaging platforms and third-party APIs.",
+        },
+        {
+          title: "Full code ownership",
+          body:
+            "You own every line of code we write. No vendor lock-in, no per-seat licensing fees, no dependency on a platform that might change its pricing.",
+        },
+      ],
+    },
+    useCases: {
+      title: "Custom software we build",
+      items: [
+        "Internal operations and workflow management systems",
+        "SaaS platforms and multi-tenant applications",
+        "Booking, scheduling and resource management tools",
+        "Data dashboards and business intelligence portals",
+      ],
+    },
+    trust: {
+      title: "We write clean code that your next developer can read.",
+      body:
+        "Rumi Solutions follows engineering best practices — version control, automated testing, code documentation and structured deployments. Your software is an asset, not a liability.",
+      points: [
+        "Agile development with regular client demos",
+        "Documented codebase with CI/CD pipelines",
+        "Post-launch support and feature iteration",
+      ],
+    },
+    faqs: [
+      {
+        question: "How do you scope a custom software project?",
+        answer:
+          "We start with a discovery session to understand your workflow, pain points and goals. From there, we create a project brief with scope, features, timeline and pricing before any development begins.",
+      },
+      {
+        question: "What is the typical timeline for custom software?",
+        answer:
+          "Simple internal tools take 6 to 10 weeks. Full-featured platforms with multiple user roles, integrations and dashboards typically take 3 to 6 months. We deliver in phases so you get working software early.",
+      },
+      {
+        question: "Can you maintain and update the software after launch?",
+        answer:
+          "Yes. We offer ongoing maintenance, support and feature development packages. Most clients continue working with us as their software evolves with their business.",
+      },
+    ],
+    finalCta: {
+      title: "Need software that actually fits your business?",
+      body:
+        "WhatsApp Rumi Solutions with a brief description of what you need automated or improved — we will scope it for free.",
+    },
+  },
+  {
+    slug: "ecommerce-website-development-malaysia",
+    tone: "Commercial",
+    keyword: "ecommerce website development Malaysia",
+    colorScheme: "blue",
+    category: "software",
+    title: "E-Commerce Website Development Malaysia | Rumi Solutions",
+    description:
+      "E-commerce website development in Malaysia. Rumi Solutions builds online stores with secure payments, inventory management and mobile-optimised shopping experiences.",
+    hero: {
+      eyebrow: "E-Commerce Development Malaysia",
+      headline: "An online store that sells while you sleep.",
+      subheadline:
+        "Rumi Solutions builds fast, secure e-commerce websites for Malaysian businesses — with payment integration, inventory management and a shopping experience that converts browsers into buyers.",
+      primaryCta: "Start your online store",
+      secondaryCta: "See e-commerce features",
+      image: {
+        src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+        alt: "E-commerce website shopping experience on laptop and mobile devices",
+      },
+    },
+    images: {
+      operational: {
+        src: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+        alt: "Online store admin dashboard managing products and orders",
+        caption:
+          "Manage products, orders, inventory and promotions from a clean admin dashboard — no technical skills required.",
+      },
+      resident: {
+        src: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&q=80",
+        alt: "Mobile shopping experience with clean product display and checkout",
+        caption:
+          "Mobile-first checkout flow with local payment gateways — FPX, credit cards, e-wallets and bank transfers supported.",
+      },
+    },
+    proofPoints: [
+      "Malaysian payment gateway integration",
+      "Mobile-optimised shopping experience",
+      "Inventory and order management built in",
+    ],
+    problem: {
+      title: "A bad online store does not just lose sales — it loses trust.",
+      body:
+        "Malaysian consumers expect fast-loading product pages, secure checkout, multiple payment options and mobile-friendly browsing. If your e-commerce site feels clunky or unreliable, customers leave and do not come back.",
+    },
+    benefits: {
+      title: "What makes a Rumi e-commerce store different",
+      items: [
+        {
+          title: "Local payment integration",
+          body:
+            "We integrate Malaysian payment gateways including FPX, Stripe, iPay88 and e-wallet options so your customers can pay the way they prefer.",
+        },
+        {
+          title: "Fast and mobile-first",
+          body:
+            "Every store is built for speed and optimised for mobile — because most Malaysian online shoppers browse and buy on their phones.",
+        },
+        {
+          title: "Built to scale",
+          body:
+            "Whether you have 50 products or 5,000, we build store architectures that handle growth in traffic, inventory and order volume without slowing down.",
+        },
+      ],
+    },
+    useCases: {
+      title: "E-commerce solutions for Malaysian businesses",
+      items: [
+        "Product-based businesses going online for the first time",
+        "Existing stores migrating from Shopee or Lazada to their own platform",
+        "F&B brands with delivery and pre-order systems",
+        "B2B wholesale platforms with tiered pricing",
+      ],
+    },
+    trust: {
+      title: "Your store, your brand, your data.",
+      body:
+        "Unlike marketplace platforms that control your customer data and charge commissions, a Rumi-built e-commerce store gives you full ownership of your brand, customer relationships and profit margins.",
+      points: [
+        "No marketplace commissions or per-transaction platform fees",
+        "Full customer data ownership for remarketing",
+        "SEO-optimised product pages for organic Google traffic",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you build on Shopify or custom?",
+        answer:
+          "We work with both. For businesses that want speed and simplicity, we build on Shopify or WooCommerce. For those needing full control and custom features, we build headless e-commerce solutions with custom backends.",
+      },
+      {
+        question: "Can you integrate with Malaysian payment gateways?",
+        answer:
+          "Yes. We integrate with FPX, Stripe, iPay88, Billplz, Revenue Monster and other Malaysian payment providers. We can also set up e-wallet payments and bank transfer options.",
+      },
+      {
+        question: "Will I be able to manage products and orders myself?",
+        answer:
+          "Yes. Every store comes with an admin panel where you can add products, manage inventory, process orders and run promotions without developer help.",
+      },
+    ],
+    finalCta: {
+      title: "Ready to sell online with a store that actually converts?",
+      body:
+        "WhatsApp Rumi Solutions with your product type and business goals — we will recommend the best e-commerce approach for your budget.",
+    },
+  },
 ];
 
 export function getLandingPage(slug: string) {
@@ -590,9 +1140,12 @@ export function getLandingPage(slug: string) {
 }
 
 export function getWhatsAppHref(page: LandingPage) {
-  const text = encodeURIComponent(
-    `Hi Rumi Solutions, I am interested in ${page.keyword}. My property is in Malaysia.`
-  );
+  const cleanKeyword = page.keyword.replace(/\s*Malaysia\s*/gi, " ").trim();
+  const msg =
+    page.category === "software"
+      ? `Hi Rumi Solutions, I am interested in your ${cleanKeyword} services. I would like to book a demo.`
+      : `Hi Rumi Solutions, I am interested in ${cleanKeyword}. I would like to book a demo.`;
+  const text = encodeURIComponent(msg);
 
   return `https://wa.me/${whatsAppNumber}?text=${text}`;
 }
