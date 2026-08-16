@@ -13,7 +13,6 @@ const audiences = [
       "Automated billing and payment collection",
       "Real-time operational reporting",
     ],
-    // TODO: replace with real image
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     imageAlt: "Modern commercial building exterior",
   },
@@ -26,7 +25,6 @@ const audiences = [
       "Real-time incident reporting",
       "Client-facing security dashboards",
     ],
-    // TODO: replace with real image
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
     imageAlt: "Security operations and monitoring",
   },
@@ -39,7 +37,6 @@ const audiences = [
       "Digital community noticeboard",
       "Resident feedback and voting tools",
     ],
-    // TODO: replace with real image
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
     imageAlt: "Residential community with modern amenities",
   },
@@ -47,10 +44,10 @@ const audiences = [
 
 export default function AudienceSection() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-gray-50">
+    <section id="about" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent-50 text-accent-700 text-sm font-semibold mb-4">
               Built For Everyone
             </span>
@@ -64,9 +61,10 @@ export default function AudienceSection() {
           </div>
         </AnimateOnScroll>
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-24">
           {audiences.map((audience, i) => {
             const isReversed = i % 2 === 1;
+            const stepNumber = String(i + 1).padStart(2, "0");
             return (
               <AnimateOnScroll key={audience.headline}>
                 <div
@@ -76,20 +74,36 @@ export default function AudienceSection() {
                 >
                   {/* Image */}
                   <div className="w-full lg:w-1/2">
-                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                      <Image
-                        src={audience.image}
-                        alt={audience.imageAlt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        loading="lazy"
-                      />
+                    <div className="relative">
+                      {/* Step number watermark */}
+                      <span
+                        className={`absolute -top-8 ${
+                          isReversed ? "-right-4" : "-left-4"
+                        } text-[7rem] font-black text-gray-100/80 select-none z-0 leading-none pointer-events-none`}
+                      >
+                        {stepNumber}
+                      </span>
+                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200/50">
+                        <Image
+                          src={audience.image}
+                          alt={audience.imageAlt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="w-full lg:w-1/2">
+                    <div className="inline-flex items-center gap-3 mb-4">
+                      <span className="w-10 h-10 rounded-full bg-accent-50 text-accent-600 flex items-center justify-center text-sm font-bold">
+                        {stepNumber}
+                      </span>
+                      <div className="w-12 h-px bg-accent-300" />
+                    </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-navy-900 mb-4">
                       {audience.headline}
                     </h3>

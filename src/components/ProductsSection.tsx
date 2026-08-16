@@ -57,11 +57,18 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <section id="solutions" className="py-20 lg:py-28 bg-navy-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="solutions" className="relative py-20 lg:py-28 bg-navy-950 overflow-hidden">
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
+
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-accent-500/[0.06] blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent-400/[0.04] blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent-500/10 text-accent-400 text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent-500/10 text-accent-400 text-sm font-semibold mb-4 border border-accent-500/20">
               Product Suite
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
@@ -74,12 +81,48 @@ export default function ProductsSection() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, i) => (
+        {/* Bento grid: 2 columns top row, 3 columns bottom row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {products.slice(0, 2).map((product, i) => (
             <AnimateOnScroll key={product.name} delay={i * 0.1}>
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 hover:border-accent-500/30 hover:-translate-y-1 transition-all group cursor-pointer">
+              <div className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.08] hover:bg-white/[0.08] hover:border-accent-500/30 hover:-translate-y-1 transition-all duration-300 group">
                 <div
-                  className={`w-14 h-14 rounded-xl ${product.color} flex items-center justify-center mb-5`}
+                  className={`w-14 h-14 rounded-xl ${product.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {product.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {product.name}
+                </h3>
+                <p className="text-gray-400 leading-relaxed mb-5">
+                  {product.tagline}
+                </p>
+                <span className="inline-flex items-center gap-1 text-accent-400 text-sm font-medium group-hover:gap-2 transition-all">
+                  Learn more
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </AnimateOnScroll>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+          {products.slice(2).map((product, i) => (
+            <AnimateOnScroll key={product.name} delay={(i + 2) * 0.1}>
+              <div className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-white/[0.08] hover:bg-white/[0.08] hover:border-accent-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                <div
+                  className={`w-14 h-14 rounded-xl ${product.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
                 >
                   {product.icon}
                 </div>
@@ -109,6 +152,22 @@ export default function ProductsSection() {
             </AnimateOnScroll>
           ))}
         </div>
+      </div>
+
+      {/* Wave divider at bottom */}
+      <div className="absolute -bottom-px left-0 right-0">
+        <svg
+          viewBox="0 0 1440 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-[30px] sm:h-[40px] lg:h-[60px] block"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,40 C480,10 960,55 1440,20 L1440,60 L0,60 Z"
+            fill="white"
+          />
+        </svg>
       </div>
     </section>
   );

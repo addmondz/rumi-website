@@ -2,6 +2,13 @@
 
 import AnimateOnScroll from "./AnimateOnScroll";
 
+const cardColor = {
+  bg: "bg-red-50",
+  text: "text-red-500",
+  border: "border-l-red-500",
+  hoverBg: "group-hover:bg-red-100",
+};
+
 const painPoints = [
   {
     icon: (
@@ -61,17 +68,23 @@ const painPoints = [
 
 export default function ProblemsSection() {
   return (
-    <section id="problems" className="py-20 lg:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="problems" className="relative py-20 lg:py-28 bg-white overflow-hidden">
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Split header — heading left, description right */}
         <AnimateOnScroll>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-semibold mb-4">
-              Industry Challenges
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight">
-              Common Issues With Current Property Management
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-16">
+            <div className="lg:max-w-xl">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-semibold mb-4">
+                Industry Challenges
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight">
+                Common Issues With Current Property Management
+              </h2>
+            </div>
+            <p className="lg:max-w-md text-lg text-gray-600 lg:pb-2">
               Traditional property management tools are fragmented, outdated, and
               leave critical gaps in security, compliance, and communication.
             </p>
@@ -79,31 +92,40 @@ export default function ProblemsSection() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {painPoints.map((point, i) => (
-            <AnimateOnScroll key={point.title} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-red-100 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center mb-4 group-hover:bg-red-100 transition-colors">
-                  {point.icon}
+          {painPoints.map((point, i) => {
+            const colors = cardColor;
+            return (
+              <AnimateOnScroll key={point.title} delay={i * 0.1}>
+                <div
+                  className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 border-l-4 ${colors.border} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}
+                >
+                  <div
+                    className={`w-12 h-12 rounded-xl ${colors.bg} ${colors.text} flex items-center justify-center mb-4 ${colors.hoverBg} transition-colors duration-300`}
+                  >
+                    {point.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-navy-900 mb-2">
+                    {point.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {point.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
-                  {point.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {point.description}
-                </p>
-              </div>
-            </AnimateOnScroll>
-          ))}
+              </AnimateOnScroll>
+            );
+          })}
         </div>
 
         <AnimateOnScroll>
           <div className="mt-16 text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-accent-600 font-semibold mb-3">
-              <div className="w-8 h-px bg-accent-500" />
-              The Smarter Solution
-              <div className="w-8 h-px bg-accent-500" />
+            <div className="inline-flex items-center gap-3 bg-accent-50 rounded-full px-6 py-3">
+              <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
+              <span className="text-accent-700 font-semibold text-sm">
+                The Smarter Solution
+              </span>
+              <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
             </div>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg mt-4">
               Rumi Solution brings every aspect of property management into one
               platform — purpose-built for property managers and residents.
             </p>

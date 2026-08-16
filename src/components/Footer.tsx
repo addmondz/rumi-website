@@ -4,16 +4,17 @@ import { useState } from "react";
 import { trackEvent } from "@/lib/gtag";
 
 const solutionLinks = [
-  { label: "Visitor Management", href: "#solutions" },
-  { label: "Parking Management", href: "#solutions" },
-  { label: "Accounting & Billing", href: "#solutions" },
-  { label: "Community App", href: "#solutions" },
+  { label: "Property Management Software", href: "/solutions/property-management-software-malaysia" },
+  { label: "Condo Management Software", href: "/solutions/condo-management-software" },
+  { label: "Custom Property Management Software", href: "/solutions/custom-property-management-software" },
+  { label: "Strata Management Software", href: "/solutions/strata-management-software-malaysia" },
+  { label: "Premium Property Management App", href: "/solutions/premium-property-management-app" },
 ];
 
 const companyLinks = [
   { label: "About Us", href: "#about" },
   { label: "Careers", href: "#" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 

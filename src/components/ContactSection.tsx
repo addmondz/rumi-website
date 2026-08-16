@@ -41,11 +41,22 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #ffffff 0%, #f5fefa 50%, #e6fcf5 100%)",
+      }}
+    >
+      {/* Decorative gradient orb */}
+      <div className="absolute -top-20 -right-40 w-[500px] h-[500px] rounded-full bg-accent-200/20 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 -left-20 w-[300px] h-[300px] rounded-full bg-accent-300/10 blur-[100px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent-50 text-accent-700 text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent-100 text-accent-700 text-sm font-semibold mb-4">
               Get Started
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight">
@@ -53,7 +64,7 @@ export default function ContactSection() {
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               See how Rumi Solution can help your property. Reach out and
-              we'll get back to you via WhatsApp.
+              we&apos;ll get back to you via WhatsApp.
             </p>
           </div>
         </AnimateOnScroll>
@@ -61,7 +72,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Form */}
           <AnimateOnScroll className="lg:col-span-3">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100/80 ring-1 ring-gray-100">
               {submitted && (
                 <div className="mb-6 p-4 rounded-xl bg-accent-50 text-accent-700 font-medium">
                   Thank you for your enquiry! We&apos;ll be in touch shortly.
@@ -184,7 +195,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-accent-500 text-white font-semibold hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold hover:from-accent-600 hover:to-accent-700 transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-xl hover:shadow-accent-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Enquiry"}
                 </button>
@@ -195,25 +206,27 @@ export default function ContactSection() {
           {/* Contact Info */}
           <AnimateOnScroll className="lg:col-span-2" delay={0.2}>
             <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100/80 ring-1 ring-gray-100">
                 <h3 className="text-lg font-semibold text-navy-900 mb-4">
                   Contact Details
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-accent-500 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                      />
-                    </svg>
+                    <div className="w-9 h-9 rounded-lg bg-accent-50 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-accent-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                        />
+                      </svg>
+                    </div>
                     <div>
                       <p className="text-sm text-gray-500">Email</p>
                       <a href="mailto:hello@rumisolution.com" onClick={() => trackEvent("contact_click", { method: "email" })} className="text-navy-900 font-medium hover:text-accent-600 transition-colors">
@@ -222,19 +235,21 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg
-                      className="w-5 h-5 text-accent-500 mt-0.5 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                      />
-                    </svg>
+                    <div className="w-9 h-9 rounded-lg bg-accent-50 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-accent-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                        />
+                      </svg>
+                    </div>
                     <div>
                       <p className="text-sm text-gray-500">WhatsApp</p>
                       <a href="https://wa.me/60142068662?text=Hey%2C%20I%20am%20interested%20in%20your%20service" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("contact_click", { method: "whatsapp", location: "contact_details" })} className="text-navy-900 font-medium hover:text-accent-600 transition-colors">
@@ -245,7 +260,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100/80 ring-1 ring-gray-100">
                 <h3 className="text-lg font-semibold text-navy-900 mb-4">
                   Working Hours
                 </h3>
@@ -259,7 +274,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="bg-accent-500 rounded-2xl p-6 text-white">
+              <div className="bg-gradient-to-br from-accent-500 to-accent-700 rounded-2xl p-6 text-white shadow-lg shadow-accent-500/20">
                 <h3 className="text-lg font-semibold mb-2">Need urgent help?</h3>
                 <p className="text-accent-100 text-sm mb-4">
                   Reach us directly on WhatsApp for quick support.

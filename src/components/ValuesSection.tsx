@@ -38,35 +38,62 @@ const values = [
 
 export default function ValuesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #e6fcf5 0%, #f5fefa 40%, #ffffff 100%)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent-50 text-accent-700 text-sm font-semibold mb-4">
-              Our Foundation
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight">
-              Core Values That Drive Us
-            </h2>
-          </div>
-        </AnimateOnScroll>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          {/* Left: Section header */}
+          <AnimateOnScroll className="lg:w-5/12">
+            <div className="lg:sticky lg:top-32">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-accent-100 text-accent-700 text-sm font-semibold mb-4">
+                Our Foundation
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight mb-6">
+                Core Values That Drive Us
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Everything we build is guided by three principles that ensure
+                your property runs smoothly, transparently, and without
+                interruption.
+              </p>
+            </div>
+          </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {values.map((value, i) => (
-            <AnimateOnScroll key={value.title} delay={i * 0.15}>
-              <div className="text-center p-8 rounded-2xl bg-gradient-to-b from-gray-50 to-white border border-gray-100 hover:shadow-lg transition-all">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent-50 text-accent-600 mb-6">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-navy-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            </AnimateOnScroll>
-          ))}
+          {/* Right: Value cards — horizontal layout */}
+          <div className="lg:w-7/12 space-y-6">
+            {values.map((value, i) => {
+              const number = String(i + 1).padStart(2, "0");
+              return (
+                <AnimateOnScroll key={value.title} delay={i * 0.15}>
+                  <div className="relative flex gap-5 p-6 lg:p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent-200 transition-all duration-300 group">
+                    {/* Number watermark */}
+                    <span className="absolute top-4 right-6 text-6xl font-bold text-gray-100 group-hover:text-accent-100 transition-colors duration-300 select-none pointer-events-none">
+                      {number}
+                    </span>
+
+                    <div className="flex-shrink-0">
+                      <div className="w-14 h-14 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center group-hover:bg-accent-100 group-hover:scale-110 transition-all duration-300">
+                        {value.icon}
+                      </div>
+                    </div>
+                    <div className="relative min-w-0">
+                      <h3 className="text-xl font-bold text-navy-900 mb-2">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {value.description}
+                      </p>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
