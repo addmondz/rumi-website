@@ -177,7 +177,7 @@ export default function Navbar() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2"
+              className="lg:hidden flex h-11 w-11 items-center justify-center"
               aria-label="Toggle menu"
             >
               <svg
@@ -233,6 +233,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setMobileOpen(false)}
                     aria-label="Close menu"
+                    className="flex h-11 w-11 items-center justify-center"
                   >
                     <svg
                       className="w-6 h-6 text-navy-900"
@@ -253,7 +254,7 @@ export default function Navbar() {
                   {/* Solutions accordion */}
                   <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="flex items-center justify-between text-navy-700 font-medium text-lg py-2 border-b border-gray-100"
+                    className="flex items-center justify-between text-navy-700 font-medium text-lg py-3 border-b border-gray-100"
                   >
                     Solutions
                     <svg
@@ -278,7 +279,7 @@ export default function Navbar() {
                                 key={item.label}
                                 href={item.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 text-sm font-medium text-navy-600 hover:text-blue-600 transition-colors"
+                                className="block py-3 text-sm font-medium text-navy-600 hover:text-blue-600 transition-colors"
                               >
                                 {item.label}
                               </a>
@@ -292,21 +293,21 @@ export default function Navbar() {
                   <a
                     href="/#about"
                     onClick={() => setMobileOpen(false)}
-                    className="text-navy-700 font-medium text-lg py-2 border-b border-gray-100"
+                    className="text-navy-700 font-medium text-lg py-3 border-b border-gray-100"
                   >
                     About
                   </a>
                   <a
                     href="/blog"
                     onClick={() => setMobileOpen(false)}
-                    className="text-navy-700 font-medium text-lg py-2 border-b border-gray-100"
+                    className="text-navy-700 font-medium text-lg py-3 border-b border-gray-100"
                   >
                     Blog
                   </a>
                   <a
                     href="/#contact"
                     onClick={() => setMobileOpen(false)}
-                    className="text-navy-700 font-medium text-lg py-2 border-b border-gray-100"
+                    className="text-navy-700 font-medium text-lg py-3 border-b border-gray-100"
                   >
                     Contact
                   </a>

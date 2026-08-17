@@ -82,7 +82,7 @@ export default function Footer() {
                   href="#"
                   aria-label={social.label}
                   onClick={() => trackEvent("social_click", { platform: social.label })}
-                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-white transition-all"
+                  className="w-11 h-11 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-500 hover:text-white transition-all"
                 >
                   {social.icon}
                 </a>
@@ -153,18 +153,18 @@ export default function Footer() {
               Get the latest product updates and industry insights delivered to
               your inbox.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2 sm:flex-row">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-gray-500 text-sm focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all"
                 required
               />
               <button
                 type="submit"
-                className="px-4 py-2.5 rounded-lg bg-accent-500 text-white font-medium text-sm hover:bg-accent-600 transition-colors flex-shrink-0"
+                className="px-4 py-3 rounded-lg bg-accent-500 text-white font-medium text-sm hover:bg-accent-600 transition-colors flex-shrink-0"
               >
                 Subscribe
               </button>

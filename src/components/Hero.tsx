@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { trackEvent } from "@/lib/gtag";
+import heroImage from "../../public/images/security-control-room.webp";
 
 export default function Hero() {
   return (
@@ -10,12 +11,13 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1558002038-1055907df827?w=1920&q=80"
+          src={heroImage}
           alt="Security surveillance control room with monitors"
           fill
           className="object-cover"
           priority
           sizes="100vw"
+          quality={70}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-navy-950/90 via-navy-900/80 to-navy-950/90" />
       </div>

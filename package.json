@@ -8,6 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "Chrome >= 111",
+    "Edge >= 111",
+    "Firefox >= 111",
+    "Safari >= 16.4",
+    "iOS >= 16.4"
+  ],
   "dependencies": {
     "@hookform/resolvers": "^5.8.0",
     "framer-motion": "^13.1.0",
@@ -15,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.85.0",
+    "sharp": "^0.34.5",
     "zod": "^3.25.76"
   },
   "devDependencies": {
