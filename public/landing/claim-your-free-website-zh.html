@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>立即领取您的免费网站 — Rumi</title>
+<meta name="description" content="免费为您设计并搭建专业网站——无需设计费，无需搭建费。主机托管会在您准备上线时另行安排。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5F0;
+    --card:#FFFFFF;
+    --ink:#16213D;
+    --ink-soft:#5B6478;
+    --ink-faint:#9198A8;
+    --coral:#FF4F32;
+    --coral-dark:#E23C22;
+    --coral-wash:#FFE9E3;
+    --yellow:#FFC94D;
+    --yellow-wash:#FFF6E0;
+    --green:#1D9A63;
+    --green-wash:#E5F6ED;
+    --line:#E7E2D6;
+    --shadow: 0 2px 4px rgba(22,33,61,0.04), 0 16px 36px rgba(22,33,61,0.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:'Inter','Noto Sans SC',sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation-duration:.01ms !important; transition-duration:.01ms !important;}}
+  h1,h2,h3{font-family:'Sora','Noto Sans SC',sans-serif; font-weight:700; letter-spacing:0; color:var(--ink);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;} img{max-width:100%; display:block;} button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 28px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){section{padding:60px 0;}}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--coral-dark); display:inline-flex; align-items:center; gap:8px; margin-bottom:16px;
+  }
+  .eyebrow::before{content:""; width:6px; height:6px; background:var(--coral); border-radius:50%; display:inline-block;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(247,245,240,0.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  nav{max-width:1140px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; justify-content:space-between;}
+  .logo{font-family:'Sora',sans-serif; font-weight:800; font-size:21px; display:flex; align-items:center; gap:9px; text-decoration:none;}
+  .logo .mark{width:26px; height:26px; border-radius:7px; background:var(--coral); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff;}
+  .nav-links{display:flex; gap:34px; list-style:none; font-size:14.5px; color:var(--ink-soft);}
+  .nav-links a{text-decoration:none; transition:color .15s;} .nav-links a:hover{color:var(--ink);}
+  .nav-mobile-toggle{display:none; background:none; border:none; font-size:22px; color:var(--ink);}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:10px; font-size:15px; font-weight:700; text-decoration:none; border:1px solid transparent; transition:transform .15s ease, box-shadow .2s ease; white-space:nowrap;}
+  .btn-primary{background:var(--coral); color:#fff;}
+  .btn-primary:hover{background:var(--coral-dark); transform:translateY(-1px); box-shadow:0 10px 26px rgba(255,79,50,0.32);}
+  .btn-secondary{background:var(--card); border:1px solid var(--line); color:var(--ink);}
+  .btn-secondary:hover{border-color:var(--ink); transform:translateY(-1px);}
+
+  /* HERO */
+  .hero{padding:80px 0 56px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;}
+  .hero h1{font-size:clamp(34px,5vw,52px); line-height:1.3; margin-bottom:20px;}
+  .hero h1 .hl{color:var(--coral);}
+  .hero-sub{font-size:17.5px; color:var(--ink-soft); max-width:460px; margin-bottom:30px;}
+  .hero-actions{display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;}
+  .trust-row{display:flex; gap:24px; flex-wrap:wrap; font-size:13.5px; color:var(--ink-soft);}
+  .trust-row span{display:flex; align-items:center; gap:7px;}
+  .urgency{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--yellow-wash); border:1px solid var(--yellow);
+    padding:8px 14px; border-radius:8px; font-size:13.5px; color:#8A5C00; font-weight:600; margin-bottom:22px;
+  }
+  .urgency::before{content:"⚡"; font-size:14px;}
+
+  .voucher{
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    position:relative;
+    max-width:400px;
+    margin-left:auto;
+    transform:rotate(-1.5deg);
+    display:flex;
+  }
+  .voucher-main{flex:1; padding:28px 22px 26px 26px;}
+  .voucher-stub{
+    width:96px;
+    border-left:2px dashed var(--line);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .voucher-stub span{
+    writing-mode:vertical-rl;
+    font-family:'IBM Plex Mono','Noto Sans SC',monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--ink-faint);
+  }
+  .voucher-stub::before, .voucher-stub::after{
+    content:""; position:absolute; left:-7px; width:14px; height:14px;
+    background:var(--bg); border-radius:50%;
+  }
+  .voucher-stub::before{top:-7px;}
+  .voucher-stub::after{bottom:-7px;}
+  .voucher-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;}
+  .voucher-id{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-faint);}
+  .voucher-stamp-badge{
+    background:var(--coral); color:#fff;
+    font-family:'Sora','Noto Sans SC',sans-serif; font-weight:800; font-size:11px;
+    letter-spacing:0.02em;
+    padding:5px 10px; border-radius:6px;
+    transform:rotate(4deg);
+  }
+  .voucher-headline{font-family:'Sora','Noto Sans SC',sans-serif; font-weight:700; font-size:14px; color:var(--ink-faint); letter-spacing:0.02em; margin-bottom:6px;}
+  .voucher-value{font-family:'Sora','Noto Sans SC',sans-serif; font-weight:800; font-size:26px; color:var(--coral); line-height:1.5; margin-bottom:14px;}
+  .voucher-line{display:flex; justify-content:space-between; font-family:'IBM Plex Mono','Noto Sans SC',monospace; font-size:12.5px; padding:5px 0; color:var(--ink-soft);}
+  .voucher-line .v{color:var(--ink); font-weight:600;}
+  .voucher-barcode{
+    margin-top:16px; height:34px;
+    background:repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 5px, var(--ink) 5px 6px, transparent 6px 9px);
+    opacity:0.85;
+  }
+
+  .proof-strip{padding:40px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .proof-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;}
+  .proof-item .num{font-family:'Sora',sans-serif; font-size:32px; font-weight:800; color:var(--ink);}
+  .proof-item .label{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+
+  .section-head{max-width:580px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,34px); margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft); font-size:16px;}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .step{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px;}
+  .step-num{
+    font-family:'Sora',sans-serif; font-weight:800; font-size:14px; color:#fff;
+    width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; background:var(--coral); margin-bottom:18px;
+  }
+  .step h3{font-size:18px; margin-bottom:10px;}
+  .step p{color:var(--ink-soft); font-size:14.5px;}
+
+  .included{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .included-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;}
+  .included-row{display:flex; justify-content:space-between; align-items:center; padding:15px 0; border-bottom:1px dashed var(--line);}
+  .included-row:first-child{padding-top:0;}
+  .included-row .name{font-size:15px;}
+  .included-row .tag{font-family:'IBM Plex Mono','Noto Sans SC',monospace; font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:20px;}
+  .included-row .tag.free{color:var(--green); background:var(--green-wash);}
+  .included-row .tag.paid{color:var(--coral-dark); background:var(--coral-wash);}
+
+  .pricing-card{background:var(--card); border:2px solid var(--ink); border-radius:18px; box-shadow:var(--shadow); padding:44px; max-width:520px; margin:0 auto; position:relative;}
+  .pricing-ribbon{
+    position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+    background:var(--coral); color:#fff; font-family:'Sora','Noto Sans SC',sans-serif; font-weight:700; font-size:12px;
+    letter-spacing:0.02em; padding:7px 18px; border-radius:20px; white-space:nowrap;
+  }
+  .pricing-top{margin-bottom:6px; text-align:center; margin-top:8px;}
+  .pricing-top h3{font-size:20px;}
+  .price-num{font-family:'Sora',sans-serif; font-size:52px; font-weight:800; line-height:1; text-align:center; margin:18px 0;}
+  .price-num span{font-family:'IBM Plex Mono','Noto Sans SC',monospace; font-size:15px; font-weight:500; color:var(--ink-soft);}
+  .price-list{list-style:none; margin:22px 0 28px;}
+  .price-list li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink-soft); padding:8px 0;}
+  .price-list svg{flex-shrink:0; margin-top:2px;}
+  .pricing-card .btn{width:100%;}
+  .pricing-fine{text-align:center; font-size:13px; color:var(--ink-faint); margin-top:16px;}
+
+  .testimonials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testimonial{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:26px;}
+  .testimonial p{font-size:14.5px; color:var(--ink); margin-bottom:18px; line-height:1.75;}
+  .testimonial .who{display:flex; align-items:center; gap:12px;}
+  .avatar{width:36px; height:36px; border-radius:50%; background:var(--yellow-wash); color:#8A5C00; display:flex; align-items:center; justify-content:center; font-family:'Sora','Noto Sans SC',sans-serif; font-weight:800; font-size:14px;}
+  .who .name{font-size:13.5px; font-weight:700;} .who .role{font-size:12px; color:var(--ink-soft);}
+
+  .faq{max-width:760px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; background:none; border:none; text-align:left; padding:22px 0; display:flex; justify-content:space-between; align-items:center; font-size:15.5px; font-weight:600; color:var(--ink);}
+  .faq-q .icon{font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--ink-faint); transition:transform .2s ease; flex-shrink:0; margin-left:20px;}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg); color:var(--coral);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding-bottom:22px; color:var(--ink-soft); font-size:14.5px; max-width:640px; line-height:1.75;}
+
+  .final-cta{background:var(--ink); color:#fff; border-radius:20px; padding:64px 56px; text-align:center; margin:0 28px; position:relative; overflow:hidden;}
+  .final-cta::before{content:""; position:absolute; top:-60px; right:-60px; width:220px; height:220px; background:var(--coral); border-radius:50%; opacity:0.25; filter:blur(30px);}
+  .final-cta-wrap{max-width:1140px; margin:0 auto;}
+  .final-cta h2{color:#fff; font-size:clamp(26px,3.4vw,38px); margin-bottom:16px;}
+  .final-cta p{color:#B7BECF; font-size:16px; max-width:480px; margin:0 auto 32px;}
+
+  footer{padding:56px 0 40px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:36px; border-bottom:1px solid var(--line); margin-bottom:24px;}
+  .footer-col h4{font-size:12.5px; color:var(--ink-faint); letter-spacing:0.04em; margin-bottom:16px; font-family:'IBM Plex Mono','Noto Sans SC',monospace; font-weight:500;}
+  .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{font-size:14.5px; color:var(--ink-soft); text-decoration:none;} .footer-col a:hover{color:var(--ink);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--ink-faint); flex-wrap:wrap; gap:12px;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.visible{opacity:1; transform:none;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .voucher{margin:0 auto; transform:rotate(0deg);}
+    .proof-grid{grid-template-columns:repeat(2,1fr); gap:32px;}
+    .steps{grid-template-columns:1fr;}
+    .included-grid{grid-template-columns:1fr; gap:32px;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:28px;}
+    .final-cta{padding:48px 28px; margin:0 16px;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;} .nav-mobile-toggle{display:block;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo"><span class="mark">R</span>Rumi</a>
+    <ul class="nav-links">
+      <li><a href="#how">建站流程</a></li>
+      <li><a href="#included">服务内容</a></li>
+      <li><a href="#pricing">价格</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+    <a href="https://wa.me/60142068662?text=Hi%20Rumi%2C%20I%20want%20a%20free%20website%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp Rumi</a>
+    <button class="nav-mobile-toggle" aria-label="菜单">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="urgency">本月限量提供一批免费建站名额</div>
+        <h1>立即<span class="hl">领取</span>您的免费网站</h1>
+        <p class="hero-sub">我们免费为您设计并搭建网站——不收设计费，不收搭建费。主机托管会在您准备上线时另行安排。</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/60142068662?text=Hi%20Rumi%2C%20I%20want%20a%20free%20website%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp Rumi →</a>
+          <a href="#how" class="btn btn-secondary">了解建站流程</a>
+        </div>
+        <div class="trust-row">
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>永久免收设计费</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>随时可取消</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>约 7 天即可上线</span>
+        </div>
+      </div>
+
+      <div class="voucher reveal">
+        <div class="voucher-main">
+          <div class="voucher-top">
+            <span class="voucher-id mono">兑换券 #00219</span>
+            <span class="voucher-stamp-badge">立即领取</span>
+          </div>
+          <div class="voucher-headline">可兑换</div>
+          <div class="voucher-value">一次免费网站<br>设计与搭建</div>
+          <div class="voucher-line"><span>设计费</span><span class="v">$0.00</span></div>
+          <div class="voucher-line"><span>搭建费</span><span class="v">$0.00</span></div>
+          <div class="voucher-line"><span>上线后主机托管</span><span class="v">另行安排</span></div>
+          <div class="voucher-barcode"></div>
+        </div>
+        <div class="voucher-stub"><span>永不过期 · 无需信用卡</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-strip">
+    <div class="wrap proof-grid">
+      <div class="proof-item"><div class="num">$0</div><div class="label">网站设计费用</div></div>
+      <div class="proof-item"><div class="num">约 7 天</div><div class="label">平均上线时间</div></div>
+      <div class="proof-item"><div class="num">另行安排</div><div class="label">主机托管上线前确认</div></div>
+      <div class="proof-item"><div class="num">100%</div><div class="label">内容与域名归您所有</div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">领取流程</div>
+        <h2>三步完成，从领取到上线</h2>
+        <p>无需独自填写复杂的设计需求表，也不会有意外账单。全程由真人对接，我们负责搭建，您负责上线。</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-num">1</div><h3>领取免费建站服务</h3><p>告诉我们您的业务——您做什么、服务哪些客户，以及希望访客在网站上采取什么行动。</p></div>
+        <div class="step reveal"><div class="step-num">2</div><h3>我们免费为您设计</h3><p>我们的团队根据您的业务进行设计、撰写文案并完成搭建，您可以免费提出修改意见。</p></div>
+        <div class="step reveal"><div class="step-num">3</div><h3>主机托管另行安排</h3><p>确认满意后，我们协助您把网站部署到安全、快速的主机上，主机费用会在上线前另行确认。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="included" class="included">
+    <div class="wrap">
+      <div class="included-grid">
+        <div class="section-head reveal" style="margin-bottom:0;">
+          <div class="eyebrow">服务内容</div>
+          <h2>建站所需的一切免费，主机托管另行安排</h2>
+          <p style="margin-bottom:0;">许多建站公司会分别收取设计费、搭建费甚至加急费。我们将这些都包含在免费搭建服务中，主机托管会在上线前另行讨论。</p>
+        </div>
+        <div class="included-list reveal">
+          <div class="included-row"><span class="name">定制主页及最多 5 个子页面</span><span class="tag free">免费</span></div>
+          <div class="included-row"><span class="name">移动端自适应设计</span><span class="tag free">免费</span></div>
+          <div class="included-row"><span class="name">基础 SEO 优化设置</span><span class="tag free">免费</span></div>
+          <div class="included-row"><span class="name">联系表单与地图嵌入</span><span class="tag free">免费</span></div>
+          <div class="included-row"><span class="name">SSL 证书与安全防护</span><span class="tag free">免费</span></div>
+          <div class="included-row"><span class="name">主机托管与在线监控</span><span class="tag paid">另行安排</span></div>
+          <div class="included-row"><span class="name">日常小改动与技术支持</span><span class="tag paid">另行安排</span></div>
+          <div class="included-row" style="border-bottom:none;"><span class="name">每日自动备份</span><span class="tag paid">另行安排</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">价格方案</div>
+        <h2>免费搭建，主机另计，绝无隐藏消费</h2>
+        <p style="margin:0 auto;">没有"入门版""专业版""企业版"这类诱导升级的套路。每一位领取的用户都享有同样的免费设计与搭建服务，主机托管会在上线前另行报价。</p>
+      </div>
+      <div class="pricing-card reveal">
+        <span class="pricing-ribbon">免费搭建</span>
+        <div class="pricing-top"><h3>网站设计与搭建</h3></div>
+        <div class="price-num">$0<span> 设计与搭建</span></div>
+        <ul class="price-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>免费定制设计与搭建 —— 永久 $0</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>主机托管会在网站上线前另行安排</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>上线后的内容修改与技术支持可另行安排</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#1D9A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>随时可取消 —— 取消前可导出您的内容</li>
+        </ul>
+        <a href="https://wa.me/60142068662?text=Hi%20Rumi%2C%20I%20want%20a%20free%20website%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp Rumi</a>
+        <p class="pricing-fine">领取时无需提供信用卡信息。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">已领取用户的反馈</div>
+        <h2>大家最先问的都是"到底有什么猫腻？"</h2>
+        <p>所以我们请每位用户在网站上线后，用自己的话来回答这个问题。</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal"><p>"之前别的地方光是主页设计就报价两千多美元。在这里设计真的是免费的，主机托管也在上线前讲得很清楚。"</p><div class="who"><div class="avatar">M</div><div><div class="name">Maria O.</div><div class="role">面包店店主</div></div></div></div>
+        <div class="testimonial reveal"><p>"我开了一家小型维修店，完全没时间自己捣鼓建站工具。他们全程搞定，不到一周网站就上线了。"</p><div class="who"><div class="avatar">D</div><div><div class="name">David K.</div><div class="role">汽车维修</div></div></div></div>
+        <div class="testimonial reveal"><p>"一开始对'免费'这件事挺怀疑的。结果网站搭建确实免费，主机托管也另行安排，没有突然冒出的设计账单。"</p><div class="who"><div class="avatar">R</div><div><div class="name">Renee T.</div><div class="role">自由摄影师</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">常见问题</div>
+        <h2>在您问"到底有什么猫腻"之前</h2>
+      </div>
+      <div class="faq reveal">
+        <div class="faq-item open"><button class="faq-q">到底有什么猫腻？<span class="icon">+</span></button><div class="faq-a"><p>并没有隐藏收费。我们不收取设计或搭建费用。主机托管会另行安排，并在网站上线前清楚说明。</p></div></div>
+        <div class="faq-item"><button class="faq-q">网站的所有权归谁？<span class="icon">+</span></button><div class="faq-a"><p>归您所有。网站内容、文案与域名都属于您。如果您日后取消我们的主机托管服务，我们会协助您导出所需内容。</p></div></div>
+        <div class="faq-item"><button class="faq-q">如果我想取消怎么办？<span class="icon">+</span></button><div class="faq-a"><p>随时可以取消，无需合约，也没有取消费用。网站会在您已付费的账单周期结束后下线。</p></div></div>
+        <div class="faq-item"><button class="faq-q">"小改动"具体包括什么？<span class="icon">+</span></button><div class="faq-a"><p>例如更新营业时间、更换图片、新增一项服务、修正文字错误等。较大的改动，如整体改版，将单独评估并报价。</p></div></div>
+        <div class="faq-item"><button class="faq-q">建站需要多长时间？<span class="icon">+</span></button><div class="faq-a"><p>大多数网站从领取到上线大约需要一周时间，具体取决于您提供内容和反馈的速度。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="claim" style="padding-top:0;">
+    <div class="final-cta-wrap">
+      <div class="final-cta reveal">
+        <h2>立即领取您的免费网站</h2>
+        <p>告诉我们您的业务，我们本周就能开始为您免费设计。只有决定正式上线后才需要付费。</p>
+        <a href="https://wa.me/60142068662?text=Hi%20Rumi%2C%20I%20want%20a%20free%20website%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp Rumi →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="logo" style="margin-bottom:12px; display:inline-flex;"><span class="mark">R</span>Rumi</a>
+        <p style="font-size:14px; color:var(--ink-soft); max-width:240px; margin-top:12px;">免费网站设计与搭建。主机托管会在上线前另行安排。</p>
+      </div>
+      <div class="footer-col"><h4>产品</h4><ul><li><a href="#how">建站流程</a></li><li><a href="#included">服务内容</a></li><li><a href="#pricing">价格</a></li></ul></div>
+      <div class="footer-col"><h4>公司</h4><ul><li><a href="#">关于我们</a></li><li><a href="#faq">常见问题</a></li><li><a href="#">联系我们</a></li></ul></div>
+      <div class="footer-col"><h4>法律信息</h4><ul><li><a href="#">服务条款</a></li><li><a href="#">隐私政策</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Rumi. 保留所有权利。</span>
+      <span>为想要一个真正好用的网站的小企业而生。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if(openItem !== item){ openItem.classList.remove('open'); openItem.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      if(isOpen){ item.classList.remove('open'); a.style.maxHeight = null; }
+      else{ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

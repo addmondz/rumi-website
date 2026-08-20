@@ -8,6 +8,30 @@ import { landingPages, siteUrl } from "@/lib/landing-pages";
 
 const freeWebsitePages = [
   {
+    title: "Claim Your Free Website Today",
+    description:
+      "A direct free website claim page from Rumi for businesses that want a professional site without a design or build fee.",
+    href: "/landing/claim-your-free-website",
+    keyword: "claim free website",
+    tone: "Offer",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      alt: "Business team reviewing a free website launch",
+    },
+  },
+  {
+    title: "立即领取您的免费网站",
+    description:
+      "Rumi 的中文免费网站领取页面，网站设计与搭建免费，主机托管上线前另行安排。",
+    href: "/landing/claim-your-free-website-zh",
+    keyword: "免费网站",
+    tone: "Offer",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      alt: "Business team reviewing a free website launch",
+    },
+  },
+  {
     title: "Rumi Free Website",
     description:
       "A free website design and build offer from Rumi, with hosting arranged separately when you are ready to launch.",
