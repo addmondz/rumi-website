@@ -235,7 +235,7 @@ export default function BlogPage() {
             </article>
           </Link>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {articleCards.map((article) => (
               <Link
                 key={article.href}
@@ -250,21 +250,21 @@ export default function BlogPage() {
                         alt={article.image.alt}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(min-width: 768px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                       />
                     )}
                   </div>
-                  <div className="p-6">
-                    <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
+                  <div className="p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-accent-700">
                       {article.tone} Article
                     </p>
-                    <h2 className="mt-3 text-2xl font-bold tracking-tight text-navy-900">
+                    <h2 className="mt-3 text-xl font-bold tracking-tight text-navy-900">
                       {article.title}
                     </h2>
-                    <p className="mt-3 leading-relaxed text-gray-600">
+                    <p className="mt-3 text-sm leading-relaxed text-gray-600">
                       {article.description}
                     </p>
-                    <div className="mt-6 flex items-center justify-between gap-4">
+                    <div className="mt-6 flex flex-col gap-2">
                       <span className="text-sm font-semibold text-navy-700">
                         {article.keyword}
                       </span>

@@ -2,21 +2,32 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import Script from "next/script";
 import { siteUrl, whatsAppNumber } from "@/lib/landing-pages";
+import {
+  contactEmail,
+  coreServices,
+  organizationAlternateNames,
+  organizationName,
+  serviceCatalogJsonLd,
+} from "@/lib/ai-visibility";
 import "./globals.css";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Rumi Solutions",
-  alternateName: "Rumi Solution",
+  "@type": ["Organization", "LocalBusiness"],
+  name: organizationName,
+  alternateName: organizationAlternateNames,
   url: siteUrl,
   logo: `${siteUrl}/favicon.ico`,
-  email: "hello@rumisolution.com",
+  email: contactEmail,
   telephone: `+${whatsAppNumber}`,
+  slogan:
+    "Malaysian software house for property systems, websites, apps and automation.",
+  knowsAbout: coreServices,
   areaServed: {
     "@type": "Country",
     name: "Malaysia",
   },
+  hasOfferCatalog: serviceCatalogJsonLd,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: `+${whatsAppNumber}`,
@@ -29,22 +40,42 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Rumi Solutions",
+  name: organizationName,
+  alternateName: organizationAlternateNames,
   url: siteUrl,
   inLanguage: "en-MY",
   publisher: {
     "@type": "Organization",
-    name: "Rumi Solutions",
+    name: organizationName,
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: organizationName,
   title: "Rumi Solutions | Software House Malaysia",
   description:
     "Malaysian software house building websites, mobile apps, custom software, e-commerce platforms and SEO solutions.",
+  keywords: [
+    "Rumi Solutions",
+    "software house Malaysia",
+    "property management software Malaysia",
+    "condo management software",
+    "web development Malaysia",
+    "mobile app development Malaysia",
+    "WhatsApp chatbot Malaysia",
+    "SEO services Malaysia",
+    "custom software development Malaysia",
+  ],
+  authors: [{ name: organizationName, url: siteUrl }],
+  creator: organizationName,
+  publisher: organizationName,
+  category: "software development",
   alternates: {
     canonical: siteUrl,
+    types: {
+      "text/plain": `${siteUrl}/llms.txt`,
+    },
   },
   openGraph: {
     title: "Rumi Solutions | Software House Malaysia",

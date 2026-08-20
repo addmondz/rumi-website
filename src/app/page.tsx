@@ -9,10 +9,52 @@ import SocialProof from "@/components/SocialProof";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+  coreServices,
+  organizationName,
+  serviceCatalogJsonLd,
+} from "@/lib/ai-visibility";
+import { siteUrl } from "@/lib/landing-pages";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: "Rumi Solutions | Software House Malaysia",
+        url: siteUrl,
+        description:
+          "Rumi Solutions builds property management software, websites, mobile apps, WhatsApp chatbots, SEO campaigns and custom business systems for Malaysian companies.",
+        isPartOf: {
+          "@type": "WebSite",
+          name: organizationName,
+          url: siteUrl,
+        },
+        about: coreServices.map((service) => ({
+          "@type": "Thing",
+          name: service,
+        })),
+      },
+      {
+        "@type": "ProfessionalService",
+        name: organizationName,
+        url: siteUrl,
+        areaServed: {
+          "@type": "Country",
+          name: "Malaysia",
+        },
+        hasOfferCatalog: serviceCatalogJsonLd,
+      },
+    ],
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <Hero />
       <ProblemsSection />
