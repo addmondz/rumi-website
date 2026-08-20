@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumi Website Launch Plan — Built free</title>
+<meta name="description" content="Rumi designs and builds your website for free. Hosting is not included — no design fee, no build fee, no catch.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J3FT8P1QL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1J3FT8P1QL');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0C12;
+    --bg-panel:#11141C;
+    --bg-panel-2:#161A24;
+    --border:#242A38;
+    --border-soft:#1B202C;
+    --text:#F3F5F9;
+    --text-soft:#9AA3B5;
+    --text-faint:#5F6779;
+    --violet:#7C6CF5;
+    --cyan:#3FD9E8;
+    --grad: linear-gradient(120deg, #7C6CF5 0%, #3FD9E8 100%);
+    --green:#34D399;
+    --green-wash:rgba(52,211,153,0.12);
+    --shadow-glow: 0 0 0 1px rgba(124,108,245,0.15), 0 20px 60px rgba(124,108,245,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:var(--text);
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  section{padding:100px 0;}
+  @media (max-width:720px){section{padding:64px 0;}}
+
+  /* background grid + glow */
+  .bg-grid{
+    position:fixed; inset:0; z-index:-2;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+  }
+  .bg-glow{
+    position:fixed; z-index:-1; pointer-events:none;
+    width:900px; height:900px;
+    top:-420px; left:50%; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(124,108,245,0.22) 0%, rgba(63,217,232,0.10) 40%, transparent 70%);
+    filter:blur(20px);
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:18px;
+    padding:6px 12px 6px 10px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:rgba(63,217,232,0.06);
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--green);
+    border-radius:50%;
+    box-shadow:0 0 8px var(--green);
+    display:inline-block;
+  }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,12,18,0.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  nav{max-width:1160px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; justify-content:space-between;}
+  .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:20px;
+    display:flex; align-items:center; gap:9px;
+    text-decoration:none;
+  }
+  .logo .mark{
+    width:26px; height:26px; border-radius:7px;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700; color:#0A0C12;
+  }
+  .nav-links{display:flex; gap:34px; list-style:none; font-size:14.5px; color:var(--text-soft);}
+  .nav-links a{text-decoration:none; transition:color .15s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{display:flex; align-items:center; gap:20px;}
+  .nav-mobile-toggle{display:none; background:none; border:none; font-size:22px; color:var(--text);}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 24px; border-radius:9px;
+    font-size:14.5px; font-weight:600;
+    text-decoration:none; border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .2s ease, filter .15s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--grad);
+    color:#0A0C12;
+  }
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 10px 30px rgba(124,108,245,0.35);}
+  .btn-ghost{background:transparent; color:var(--text-soft); text-decoration:none;}
+  .btn-ghost:hover{color:var(--text);}
+  .btn-secondary{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    color:var(--text);
+  }
+  .btn-secondary:hover{border-color:var(--violet); transform:translateY(-1px);}
+
+  /* HERO */
+  .hero{padding:96px 0 60px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center;}
+  .hero h1{font-size:clamp(38px,5vw,58px); line-height:1.07; margin-bottom:22px;}
+  .hero h1 .gradient-text{
+    background:var(--grad);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-sub{font-size:18px; color:var(--text-soft); max-width:460px; margin-bottom:34px;}
+  .hero-actions{display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-bottom:34px;}
+  .trust-row{display:flex; gap:26px; flex-wrap:wrap; font-size:13.5px; color:var(--text-soft);}
+  .trust-row span{display:flex; align-items:center; gap:7px;}
+
+  /* Terminal signature element */
+  .console{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:var(--shadow-glow);
+    overflow:hidden;
+  }
+  .console-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:14px 16px;
+    border-bottom:1px solid var(--border-soft);
+    background:var(--bg-panel-2);
+  }
+  .console-bar .dot{width:10px; height:10px; border-radius:50%;}
+  .console-bar .dot.r{background:#FF5F57;}
+  .console-bar .dot.y{background:#FEBC2E;}
+  .console-bar .dot.g{background:#28C840;}
+  .console-bar .title{
+    margin-left:10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; color:var(--text-faint);
+  }
+  .console-body{
+    padding:22px 22px 20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13.5px;
+    line-height:2;
+  }
+  .console-body .l1{color:var(--text-faint);}
+  .console-body .ok{color:var(--green);}
+  .console-body .accent{color:var(--cyan);}
+  .console-body .caret{
+    display:inline-block; width:8px; height:14px; background:var(--cyan);
+    vertical-align:middle; margin-left:4px;
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .console-divider{border-top:1px dashed var(--border); margin:14px 0;}
+  .console-price-row{display:flex; justify-content:space-between; align-items:center;}
+  .console-price-row .big{font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:600; color:var(--text);}
+  .console-price-row .small{font-size:12px; color:var(--text-faint);}
+  .console-badge{
+    display:inline-block; margin-top:14px;
+    font-size:11px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--green); background:var(--green-wash);
+    border:1px solid rgba(52,211,153,0.3);
+    padding:5px 10px; border-radius:20px;
+  }
+
+  /* PROOF STRIP */
+  .proof-strip{padding:44px 0; border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);}
+  .proof-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;}
+  .proof-item .num{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600;}
+  .proof-item .num.grad{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .proof-item .label{font-size:13px; color:var(--text-soft); margin-top:6px;}
+
+  /* SECTION HEAD */
+  .section-head{max-width:580px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,38px); margin-bottom:14px;}
+  .section-head p{color:var(--text-soft); font-size:16.5px;}
+
+  /* STEPS / PIPELINE */
+  .pipeline{position:relative;}
+  .pipeline-track{
+    position:absolute; top:24px; left:0; right:0; height:1px;
+    background:linear-gradient(to right, transparent, var(--border), transparent);
+    display:none;
+  }
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative;}
+  .step{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px;
+  }
+  .step-num{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    color:var(--cyan);
+    width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:9px;
+    background:rgba(63,217,232,0.08);
+    border:1px solid rgba(63,217,232,0.25);
+    margin-bottom:20px;
+  }
+  .step h3{font-size:18.5px; margin-bottom:10px;}
+  .step p{color:var(--text-soft); font-size:14.5px;}
+
+  /* FEATURES */
+  .features-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .feature-card{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .feature-card:hover{border-color:var(--violet); transform:translateY(-2px);}
+  .feature-icon{
+    width:38px; height:38px; border-radius:9px;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:16px;
+    color:#0A0C12; font-weight:700; font-size:16px;
+  }
+  .feature-card h3{font-size:16.5px; margin-bottom:8px;}
+  .feature-card p{color:var(--text-soft); font-size:14px;}
+  .feature-tag{
+    display:inline-block; margin-top:14px;
+    font-family:'JetBrains Mono', monospace; font-size:10.5px;
+    letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--green); background:var(--green-wash);
+    padding:3px 9px; border-radius:20px;
+  }
+
+  /* PRICING */
+  .pricing-card{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow-glow);
+    padding:46px;
+    max-width:520px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+  }
+  .pricing-card::before{
+    content:"";
+    position:absolute; top:-2px; left:-2px; right:-2px; height:3px;
+    background:var(--grad);
+  }
+  .pricing-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;}
+  .pricing-top h3{font-size:21px;}
+  .price-num{font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; line-height:1; margin-top:18px;}
+  .price-num span{font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500; color:var(--text-soft);}
+  .price-list{list-style:none; margin:26px 0 30px;}
+  .price-list li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--text-soft); padding:9px 0; border-bottom:1px solid var(--border-soft);}
+  .price-list li:last-child{border-bottom:none;}
+  .price-list svg{flex-shrink:0; margin-top:2px;}
+  .pricing-card .btn{width:100%;}
+  .pricing-fine{text-align:center; font-size:13px; color:var(--text-faint); margin-top:16px;}
+
+  /* TESTIMONIALS */
+  .testimonials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testimonial{background:var(--bg-panel); border:1px solid var(--border); border-radius:14px; padding:26px;}
+  .testimonial p{font-size:14.5px; color:var(--text); margin-bottom:20px; line-height:1.65;}
+  .testimonial .who{display:flex; align-items:center; gap:12px;}
+  .avatar{
+    width:36px; height:36px; border-radius:50%;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; color:#0A0C12;
+  }
+  .who .name{font-size:13.5px; font-weight:600;}
+  .who .role{font-size:12px; color:var(--text-soft);}
+
+  /* FAQ */
+  .faq{max-width:760px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border-soft);}
+  .faq-q{
+    width:100%; background:none; border:none; text-align:left;
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    font-size:16px; font-weight:500; color:var(--text);
+  }
+  .faq-q .icon{
+    font-family:'JetBrains Mono', monospace; font-size:18px; color:var(--text-faint);
+    transition:transform .2s ease; flex-shrink:0; margin-left:20px;
+  }
+  .faq-item.open .faq-q .icon{transform:rotate(45deg); color:var(--cyan);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding-bottom:22px; color:var(--text-soft); font-size:14.5px; max-width:640px; line-height:1.65;}
+
+  /* FINAL CTA */
+  .final-cta{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:64px 56px;
+    text-align:center;
+    margin:0 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(124,108,245,0.18), transparent 60%);
+  }
+  .final-cta-inner{position:relative;}
+  .final-cta-wrap{max-width:1160px; margin:0 auto;}
+  .final-cta h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:16px;}
+  .final-cta p{color:var(--text-soft); font-size:16.5px; max-width:480px; margin:0 auto 32px;}
+
+  /* FOOTER */
+  footer{padding:56px 0 40px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:36px; border-bottom:1px solid var(--border-soft); margin-bottom:24px;}
+  .footer-col h4{font-size:12.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:16px; font-family:'JetBrains Mono', monospace; font-weight:500;}
+  .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{font-size:14.5px; color:var(--text-soft); text-decoration:none;}
+  .footer-col a:hover{color:var(--text);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--text-faint); flex-wrap:wrap; gap:12px;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.visible{opacity:1; transform:none;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .proof-grid{grid-template-columns:repeat(2,1fr); gap:32px;}
+    .steps{grid-template-columns:1fr;}
+    .features-grid{grid-template-columns:1fr 1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:28px;}
+    .final-cta{padding:48px 28px; margin:0 16px;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .nav-mobile-toggle{display:block;}
+    .features-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<header>
+  <nav>
+    <a href="/" class="logo"><span class="mark">R</span>Rumi</a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/60142068662?text=Hey%20Rumi%2C%20i%20want%20a%20free%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get my free site</a>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Design &amp; build: Free</div>
+        <h1>Your website,<br><span class="gradient-text">built free.</span><br></h1>
+        <p class="hero-sub">We design, build, and prepare a professional website for your business — no design fee, no build fee. Hosting is separate and can be arranged when you're ready to go live.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/60142068662?text=Hey%20Rumi%2C%20i%20want%20a%20free%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get my free site →</a>
+          <a href="#how" class="btn btn-secondary">See how it works</a>
+        </div>
+        <div class="trust-row">
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>No design fee, ever</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel anytime</span>
+          <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Live in ~7 days</span>
+        </div>
+      </div>
+
+      <div class="console reveal">
+        <div class="console-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="title">build-log — yourbusiness.com</span>
+        </div>
+        <div class="console-body">
+          <div class="l1">$ rumi deploy --site "your-business"</div>
+          <div><span class="ok">✓</span> Analyzing your business &amp; audience</div>
+          <div><span class="ok">✓</span> Generating custom design</div>
+          <div><span class="ok">✓</span> Writing on-page SEO &amp; copy</div>
+          <div><span class="ok">✓</span> Deploying to secure hosting</div>
+          <div><span class="accent">→ status: live<span class="caret"></span></span></div>
+          <div class="console-divider"></div>
+          <div class="console-price-row">
+            <span class="small">DESIGN &amp; BUILD</span>
+            <span class="small ok">Free</span>
+          </div>
+          <span class="console-badge">✓ free website build</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section class="proof-strip">
+    <div class="wrap proof-grid">
+      <div class="proof-item"><div class="num grad">Free</div><div class="label">Charged to design your site</div></div>
+      <div class="proof-item"><div class="num grad">~7 days</div><div class="label">Typical time to launch</div></div>
+      <div class="proof-item"><div class="num grad">Separate</div><div class="label">Hosting not included</div></div>
+      <div class="proof-item"><div class="num grad">100%</div><div class="label">Your content, your domain</div></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Process</div>
+        <h2>From idea to live site, in three steps</h2>
+        <p>No templates to wrestle with alone and no surprise invoices. You talk to a real person, we build it, you go live.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num mono">01</div>
+          <h3>Tell us about your business</h3>
+          <p>A short call or form — what you do, who you serve, and what you want visitors to do when they land on your site.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num mono">02</div>
+          <h3>We design &amp; build it — free</h3>
+          <p>Our team designs a site around your business, writes the copy, and builds it to load fast and rank well. You review at no cost.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num mono">03</div>
+          <h3>Go live when you're ready</h3>
+          <p>Once you approve it, we help you launch it on fast, secure hosting. Hosting is not included in the free website build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">What's included</div>
+        <h2>Everything it takes to launch — none of it billed separately</h2>
+        <p>Most agencies charge a design fee, a build fee, and a "rush" fee. We fold it all into the free build. Hosting is separate and not included.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal"><div class="feature-icon">✦</div><h3>Custom design</h3><p>A site designed around your business, not a generic template.</p><span class="feature-tag">Included</span></div>
+        <div class="feature-card reveal"><div class="feature-icon">▤</div><h3>Up to 5 pages</h3><p>Home, about, services, contact, and one more — built and written for you.</p><span class="feature-tag">Included</span></div>
+        <div class="feature-card reveal"><div class="feature-icon">◱</div><h3>Mobile responsive</h3><p>Looks right on phones, tablets, and desktops from day one.</p><span class="feature-tag">Included</span></div>
+        <div class="feature-card reveal"><div class="feature-icon">◈</div><h3>Basic SEO setup</h3><p>Titles, meta descriptions, and structure set up so search engines can find you.</p><span class="feature-tag">Included</span></div>
+        <div class="feature-card reveal"><div class="feature-icon">⬡</div><h3>Hosting &amp; SSL</h3><p>Fast, secure hosting can be arranged separately when you're ready to launch.</p><span class="feature-tag">Not included</span></div>
+        <div class="feature-card reveal"><div class="feature-icon">↻</div><h3>Backups &amp; small edits</h3><p>Ongoing care is available separately after the free website build.</p><span class="feature-tag">Optional</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Pricing</div>
+        <h2>Free website build. No surprises.</h2>
+        <p style="margin:0 auto;">No "starter," "pro," or "enterprise" tier built to upsell you later. Every site gets the same free design and build. Hosting is not included.</p>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-top">
+          <div>
+            <h3>Website Design + Build</h3>
+            <p style="color:var(--text-soft); font-size:13.5px; margin-top:4px;">Hosting not included</p>
+          </div>
+        </div>
+        <div class="price-num">Free<span> website</span></div>
+        <ul class="price-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Free custom design &amp; build</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Hosting is not included and can be arranged separately.</small></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Small content edits included each month</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel anytime — export your content on the way out</li>
+        </ul>
+        <a href="https://wa.me/60142068662?text=Hey%20Rumi%2C%20i%20want%20a%20free%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start with a free design</a>
+        <p class="pricing-fine">No credit card required to start the design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">From people who tried it</div>
+        <h2>The first question is always "what's the catch?"</h2>
+        <p>So we ask people to answer that in their own words once the site's live.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal"><p>"I'd been quoted a high upfront fee elsewhere just for a homepage. Here the design really was free, and hosting was discussed separately when I was ready."</p><div class="who"><div class="avatar">M</div><div><div class="name">Maria O.</div><div class="role">Bakery owner</div></div></div></div>
+        <div class="testimonial reveal"><p>"I run a small repair shop and had zero time to deal with a website builder. They handled everything and it was live inside a week."</p><div class="who"><div class="avatar">D</div><div><div class="name">David K.</div><div class="role">Auto repair</div></div></div></div>
+        <div class="testimonial reveal"><p>"I was skeptical about the free part. Turns out the website build really was free — no upsells after the fact."</p><div class="who"><div class="avatar">R</div><div><div class="name">Renee T.</div><div class="role">Freelance photographer</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <div class="eyebrow" style="justify-content:center;">Questions</div>
+        <h2>Before you ask "what's the catch?"</h2>
+      </div>
+      <div class="faq reveal">
+        <div class="faq-item open">
+          <button class="faq-q">So what actually is the catch?<span class="icon">+</span></button>
+          <div class="faq-a"><p>There isn't a hidden one. We don't charge for design or build time. Hosting is not included in the free website build and can be arranged separately when you're ready to launch.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do I own the website?<span class="icon">+</span></button>
+          <div class="faq-a"><p>Yes. The content, copy, and domain are yours. If you ever cancel hosting with us, we'll help you export what you need.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What if I want to cancel?<span class="icon">+</span></button>
+          <div class="faq-a"><p>Cancel anytime, no contract, no cancellation fee. Your site comes down at the end of the billing period you've already paid for.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What counts as a "small edit"?<span class="icon">+</span></button>
+          <div class="faq-a"><p>Updating your hours, swapping a photo, adding a service line, fixing a typo. Larger changes like a full redesign are scoped and quoted separately.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does it take to launch?<span class="icon">+</span></button>
+          <div class="faq-a"><p>Most sites go from kickoff to live in about a week, depending on how quickly we get your content and feedback.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="get-started" style="padding-top:0;">
+    <div class="final-cta-wrap">
+      <div class="final-cta reveal">
+        <div class="final-cta-inner">
+          <h2>Your website shouldn't cost more than your rent.</h2>
+          <p>Tell us about your business and we'll start your free design this week. You only pay if you decide to go live.</p>
+          <a href="https://wa.me/60142068662?text=Hey%20Rumi%2C%20i%20want%20a%20free%20site%21" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get my free website →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="logo" style="margin-bottom:12px; display:inline-flex;"><span class="mark">R</span>Rumi</a>
+        <p style="font-size:14px; color:var(--text-soft); max-width:220px; margin-top:12px;">Free website design and build. Hosting not included.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Rumi. All rights reserved.</span>
+      <span>Made for small businesses who just want a website that works.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if(openItem !== item){ openItem.classList.remove('open'); openItem.querySelector('.faq-a').style.maxHeight = null; }
+      });
+      if(isOpen){ item.classList.remove('open'); a.style.maxHeight = null; }
+      else{ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

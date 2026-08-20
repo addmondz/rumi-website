@@ -6,17 +6,44 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { landingPages, siteUrl } from "@/lib/landing-pages";
 
+const freeWebsitePages = [
+  {
+    title: "Rumi Free Website",
+    description:
+      "A free website design and build offer from Rumi, with hosting arranged separately when you are ready to launch.",
+    href: "/landing/rumi-free-website",
+    keyword: "free website Malaysia",
+    tone: "Offer",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      alt: "Modern business workspace for a free website launch",
+    },
+  },
+  {
+    title: "Rumi Website Launch Plan",
+    description:
+      "A launch-focused free website landing page for businesses that want a professional site without an upfront build fee.",
+    href: "/landing/rumi-website-launch-plan",
+    keyword: "free website design",
+    tone: "Offer",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+      alt: "Website design team planning a business launch",
+    },
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Property Management Software Articles | Rumi Solutions Blog",
+  title: "Rumi Solutions Blog | Software, Websites & Business Guides",
   description:
-    "Read Rumi Solutions articles on property management software, condo management software, strata management and custom property management apps in Malaysia.",
+    "Read Rumi Solutions articles and landing pages on free websites, property management software, custom systems and digital solutions in Malaysia.",
   alternates: {
     canonical: `${siteUrl}/blog`,
   },
   openGraph: {
-    title: "Property Management Software Articles | Rumi Solutions Blog",
+    title: "Rumi Solutions Blog | Software, Websites & Business Guides",
     description:
-      "Explore property management software guides and solution pages for Malaysian condos, strata buildings and property teams.",
+      "Explore Rumi Solutions guides and landing pages for free websites, property management software and Malaysian business software.",
     url: `${siteUrl}/blog`,
     siteName: "Rumi Solutions",
     type: "website",
@@ -24,36 +51,63 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Property Management Software Articles | Rumi Solutions Blog",
+    title: "Rumi Solutions Blog | Software, Websites & Business Guides",
     description:
-      "Property management software articles for Malaysian condos, strata buildings and property teams.",
+      "Free website, software and property management articles for Malaysian businesses.",
   },
 };
 
 export default function BlogPage() {
   const featured = landingPages[0];
   const articles = landingPages.slice(1);
+  const articleCards = [
+    ...articles.map((article) => ({
+      title: article.title,
+      description: article.description,
+      href: `/solutions/${article.slug}`,
+      keyword: article.keyword,
+      tone: article.tone,
+      image: article.hero.image,
+    })),
+    ...freeWebsitePages,
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "Rumi Solutions Blog",
     url: `${siteUrl}/blog`,
-    blogPost: landingPages.map((page) => ({
-      "@type": "BlogPosting",
-      headline: page.title,
-      description: page.description,
-      url: `${siteUrl}/solutions/${page.slug}`,
-      image: page.hero.image?.src,
-      author: {
-        "@type": "Organization",
-        name: "Rumi Solutions",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Rumi Solutions",
-      },
-    })),
+    blogPost: [
+      ...freeWebsitePages.map((page) => ({
+        "@type": "BlogPosting",
+        headline: page.title,
+        description: page.description,
+        url: `${siteUrl}${page.href}`,
+        author: {
+          "@type": "Organization",
+          name: "Rumi Solutions",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Rumi Solutions",
+        },
+      })),
+      ...landingPages.map((page) => ({
+        "@type": "BlogPosting",
+        headline: page.title,
+        description: page.description,
+        url: `${siteUrl}/solutions/${page.slug}`,
+        image: page.hero.image?.src,
+        author: {
+          "@type": "Organization",
+          name: "Rumi Solutions",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Rumi Solutions",
+        },
+      })),
+    ],
   };
 
   return (
@@ -88,11 +142,12 @@ export default function BlogPage() {
               Rumi Solutions Blog
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Property management software articles for Malaysia.
+              Software, websites and business guides for Malaysia.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
-              Browse practical guides and solution pages for condos, strata
-              buildings, custom workflows and premium resident app experiences.
+              Browse practical guides and landing pages for free websites,
+              property management software, custom workflows and digital
+              business tools.
             </p>
           </div>
         </div>
@@ -157,18 +212,18 @@ export default function BlogPage() {
           </Link>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {articles.map((article) => (
+            {articleCards.map((article) => (
               <Link
-                key={article.slug}
-                href={`/solutions/${article.slug}`}
+                key={article.href}
+                href={article.href}
                 className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <article>
                   <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
-                    {article.hero.image && (
+                    {article.image && (
                       <Image
-                        src={article.hero.image.src}
-                        alt={article.hero.image.alt}
+                        src={article.image.src}
+                        alt={article.image.alt}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(min-width: 768px) 50vw, 100vw"
