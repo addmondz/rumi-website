@@ -13,6 +13,7 @@ const products = [
     name: "Visitor & Access Management",
     tagline: "Seamless registration, QR-based entry, and real-time visitor tracking.",
     color: "bg-blue-50 text-blue-600",
+    href: "/solutions/property-management-software-malaysia",
   },
   {
     icon: (
@@ -23,6 +24,7 @@ const products = [
     name: "Parking Management",
     tagline: "Parking charges, lot allocation, and vehicle tracking made simple.",
     color: "bg-emerald-50 text-emerald-600",
+    href: "/solutions/property-management-software-malaysia",
   },
   {
     icon: (
@@ -33,6 +35,7 @@ const products = [
     name: "Accounting & Billing",
     tagline: "Automated invoicing, payment tracking, and real-time financial dashboards.",
     color: "bg-amber-50 text-amber-600",
+    href: "/solutions/property-management-software-malaysia",
   },
   {
     icon: (
@@ -43,6 +46,7 @@ const products = [
     name: "Community App",
     tagline: "A mobile hub for residents and management — notices, bookings, and feedback.",
     color: "bg-purple-50 text-purple-600",
+    href: "/solutions/condo-management-software",
   },
   {
     icon: (
@@ -53,6 +57,7 @@ const products = [
     name: "Maintenance & Workflow",
     tagline: "Track maintenance requests, assign tasks, and monitor resolution in real time.",
     color: "bg-rose-50 text-rose-600",
+    href: "/solutions/custom-property-management-software",
   },
   {
     icon: (

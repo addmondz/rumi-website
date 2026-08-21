@@ -98,40 +98,28 @@ export default function BlogPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    name: "Rumi Solutions Blog",
+    "@type": "CollectionPage",
+    name: "Rumi Solutions Blog & Guides",
     url: `${siteUrl}/blog`,
-    blogPost: [
-      ...freeWebsitePages.map((page) => ({
-        "@type": "BlogPosting",
-        headline: page.title,
-        description: page.description,
-        url: `${siteUrl}${page.href}`,
-        author: {
-          "@type": "Organization",
-          name: "Rumi Solutions",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Rumi Solutions",
-        },
-      })),
-      ...landingPages.map((page) => ({
-        "@type": "BlogPosting",
-        headline: page.title,
-        description: page.description,
-        url: `${siteUrl}/solutions/${page.slug}`,
-        image: page.hero.image?.src,
-        author: {
-          "@type": "Organization",
-          name: "Rumi Solutions",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Rumi Solutions",
-        },
-      })),
-    ],
+    description:
+      "Browse Rumi Solutions guides and service pages for free websites, property management software and Malaysian business software.",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: [
+        ...freeWebsitePages.map((page, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${siteUrl}${page.href}`,
+          name: page.title,
+        })),
+        ...landingPages.map((page, i) => ({
+          "@type": "ListItem",
+          position: freeWebsitePages.length + i + 1,
+          url: `${siteUrl}/solutions/${page.slug}`,
+          name: page.title,
+        })),
+      ],
+    },
   };
 
   return (

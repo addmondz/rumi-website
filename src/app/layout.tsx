@@ -53,19 +53,21 @@ const websiteJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: organizationName,
-  title: "Rumi Solutions | Software House Malaysia",
+  title: "Software House Malaysia | Rumi Solutions — Websites, Apps & Custom Software",
   description:
-    "Malaysian software house building websites, mobile apps, custom software, e-commerce platforms and SEO solutions.",
+    "Malaysian software house offering free web development, mobile apps, property management software, WhatsApp chatbots, SEO and custom software solutions.",
   keywords: [
-    "Rumi Solutions",
     "software house Malaysia",
+    "Rumi Solutions",
+    "free web development Malaysia",
+    "custom software development Malaysia",
     "property management software Malaysia",
     "condo management software",
-    "web development Malaysia",
     "mobile app development Malaysia",
     "WhatsApp chatbot Malaysia",
     "SEO services Malaysia",
-    "custom software development Malaysia",
+    "web development Malaysia",
+    "e-commerce website Malaysia",
   ],
   authors: [{ name: organizationName, url: siteUrl }],
   creator: organizationName,
@@ -78,9 +80,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Rumi Solutions | Software House Malaysia",
+    title: "Software House Malaysia | Rumi Solutions",
     description:
-      "Malaysian software house — web development, mobile apps, custom software, e-commerce and SEO services for businesses.",
+      "Malaysian software house — free websites, mobile apps, property management systems, WhatsApp chatbots, SEO and custom software for businesses.",
     type: "website",
     locale: "en_MY",
     url: "https://rumisolution.com",
@@ -88,9 +90,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rumi Solutions | Software House Malaysia",
+    title: "Software House Malaysia | Rumi Solutions",
     description:
-      "Websites, mobile apps, custom software, e-commerce and SEO services in Malaysia.",
+      "Free websites, mobile apps, custom software, property management systems and SEO services in Malaysia.",
   },
 };
 

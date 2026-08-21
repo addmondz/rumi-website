@@ -34,16 +34,17 @@ export default function Hero() {
           className="max-w-3xl"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
-            Tailored Property Management for{" "}
+            Your Custom{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-500">
-              Your Property
-            </span>
+              Software House
+            </span>{" "}
+            in Malaysia
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed">
-            Affordable websites and apps for your property — from QR code
-            visitor access and parking management to resident portals and
-            billing.
+            Rumi Solutions builds free websites, mobile apps, property
+            management software, WhatsApp chatbots and custom business
+            systems for companies across Malaysia.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">

@@ -22,10 +22,10 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
-        name: "Rumi Solutions | Software House Malaysia",
+        name: "Software House Malaysia | Rumi Solutions",
         url: siteUrl,
         description:
-          "Rumi Solutions builds property management software, websites, mobile apps, WhatsApp chatbots, SEO campaigns and custom business systems for Malaysian companies.",
+          "Malaysian software house offering free web development, mobile apps, property management software, WhatsApp chatbots, SEO and custom software solutions.",
         isPartOf: {
           "@type": "WebSite",
           name: organizationName,
